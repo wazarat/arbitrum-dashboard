@@ -34,8 +34,16 @@ export const CHAIN_INCOME_CATEGORIES = new Set(["Chain", "Foundation"]);
  */
 export const CHAIN_INCOME_SLUGS = new Set(["arbitrum", "arbitrum-nitro", "arbitrum-timeboost"]);
 
+/**
+ * Categories DefiLlama leaves out of Arbitrum's chain TVL altogether, found at the first Arbitrum reconciliation
+ * (Nov 17 2026): DefiLlama's gross chain TVL ($1.955B) equals the sum of every listing except bridges, exchanges,
+ * the chain's own rows, RWA ($157M, almost all USD.AI) and Basis Trading ($21M), to within $1M. They keep their
+ * own figures on their pop-ups and stay out of the Overview sums.
+ */
+export const OUTSIDE_CHAIN_TVL_CATEGORIES = new Set(["RWA", "Basis Trading"]);
+
 /** Why a protocol's TVL sits outside the Atlas total. */
-export type TvlExclusion = "doublecounted" | "cex" | "locker" | "bridge" | "chain-income";
+export type TvlExclusion = "doublecounted" | "cex" | "locker" | "bridge" | "chain-income" | "outside-total";
 
 export const EXCLUSION_LABEL: Record<TvlExclusion | "outside-breakdown", string> = {
   doublecounted: "Double counted by DefiLlama",
@@ -43,6 +51,7 @@ export const EXCLUSION_LABEL: Record<TvlExclusion | "outside-breakdown", string>
   locker: "Token lockers",
   bridge: "Bridge deposits",
   "chain-income": "Chain income",
+  "outside-total": "Outside DefiLlama's chain TVL (RWA and basis trading)",
   "outside-breakdown": "Outside DefiLlama's chain breakdown",
 };
 
@@ -59,6 +68,7 @@ export function inDoublecountedBucket(category: string, adapterDoublecounted: bo
 export function tvlExclusion(p: Pick<LlamaProtocolSnap, "slug" | "category">, adapterDoublecounted: boolean | null | undefined): TvlExclusion | null {
   if (isChainIncome(p)) return "chain-income";
   if (p.category === CEX_CATEGORY) return "cex";
+  if (OUTSIDE_CHAIN_TVL_CATEGORIES.has(p.category)) return "outside-total";
   if (inDoublecountedBucket(p.category, adapterDoublecounted)) return "doublecounted";
   if (p.category === LOCKER_CATEGORY) return "locker";
   if (BRIDGE_CATEGORIES.has(p.category)) return "bridge";

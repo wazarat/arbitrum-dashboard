@@ -106,6 +106,10 @@ function loadHistory(): { meta: HistoryMeta; store: HistoryStore; chain: ChainHi
     counters: [],
   });
   chain.growthepie = readJson<Record<string, Series>>(path.join(HISTORY, "growthepie.json"), {});
+  // Blockscout's stats lines have their own file (scripts/fetch/blockscout.ts); an older chain.json may still carry some.
+  const bs = readJson<{ lines: Record<string, Series>; counters: ChainHistory["counters"] }>(path.join(HISTORY, "blockscout.json"), { lines: {}, counters: [] });
+  chain.blockscoutLines = { ...chain.blockscoutLines, ...bs.lines };
+  if (bs.counters.length) chain.counters = bs.counters;
   // Sector metric inputs (docs/reference/robinhood-sector-metrics-spec.md): series DefiLlama reports beside TVL, its methodology text and Morpho's own totals.
   const sector: SectorInputStore = {
     extras: Object.fromEntries(EXTRA_TVL_KEYS.map((k) => [k, dl(`tvl-${k}`)])) as Record<ExtraTvlKey, SeriesMap>,
@@ -350,7 +354,7 @@ function main() {
       process.exit(1);
     }
     const c = history.chain.defillama;
-    rec = reconcile(history.protocols, { volume: history.store.volume, fees: history.store.fees, revenue: history.store.revenue }, { tvl: c.tvl, tvlDoublecounted: c.tvlDoublecounted ?? [], volume: c.volume, fees: c.fees, revenue: c.revenue }, end);
+    rec = reconcile(history.protocols, { volume: history.store.volume, fees: history.store.fees, revenue: history.store.revenue }, { tvl: c.tvl, tvlDoublecounted: c.tvlDoublecounted ?? [], volume: c.volume, fees: c.fees, revenue: c.revenue }, end, history.store.tvl);
   }
 
   // Funding rounds and investors.

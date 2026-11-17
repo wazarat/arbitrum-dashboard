@@ -16,7 +16,6 @@ import { DATA, HISTORY } from "../lib/paths";
 import { appendDated, readJson, upsertSeries, writeJsonStable } from "../lib/store";
 import { CHAIN } from "../../src/lib/chain";
 import type { Ctx, RunResult } from "./context";
-import { readChain, writeChain } from "./defillama";
 import { createClient, HttpError, type HttpClient } from "./http";
 
 /** Arbitrum publishes a Blockscout stats service (probed Nov 17 2026); growthepie stays as a cross-check. */
@@ -138,16 +137,29 @@ export function foldDays(rows: TxPage["rows"], into: Map<string, { txns: number;
   return into;
 }
 
+/**
+ * The stats lines and counters live in their own file: the DefiLlama lane rewrites chain.json at the same time,
+ * so sharing it dropped these writes on the first Arbitrum backfill (the same reason growthepie has its own file).
+ */
+export const BLOCKSCOUT_FILE = path.join(HISTORY, "blockscout.json");
+export interface BlockscoutHistory {
+  lines: Record<string, Series>;
+  counters: Array<[string, Record<string, number>]>;
+}
+export function readBlockscout(): BlockscoutHistory {
+  return readJson<BlockscoutHistory>(BLOCKSCOUT_FILE, { lines: {}, counters: [] });
+}
+
 export async function runLines(ctx: Ctx): Promise<RunResult> {
   if (!STATS) return { rows: 0, calls: 0, notes: ["skipped: no Blockscout stats service configured for the chain"] };
   const client = createClient({ name: "blockscout", minIntervalMs: 500 });
   const notes: string[] = [];
-  const chain = readChain();
+  const chain = readBlockscout();
   let rows = 0;
   for (const id of LINE_IDS) {
     try {
       const s = parseLine(await client.getJson(`${STATS}/lines/${id}?resolution=DAY`));
-      chain.blockscoutLines[id] = upsertSeries(chain.blockscoutLines[id] ?? [], s, { today: ctx.today });
+      chain.lines[id] = upsertSeries(chain.lines[id] ?? [], s, { today: ctx.today });
       rows += s.length;
     } catch (e) {
       notes.push(`${id}: ${(e as Error).message}`);
@@ -159,7 +171,7 @@ export async function runLines(ctx: Ctx): Promise<RunResult> {
   } catch (e) {
     notes.push(`counters: ${(e as Error).message}`);
   }
-  if (!ctx.dryRun) writeChain(chain);
+  if (!ctx.dryRun) writeJsonStable(BLOCKSCOUT_FILE, chain);
   return { rows, calls: client.stats().calls, notes };
 }
 

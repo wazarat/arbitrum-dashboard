@@ -169,7 +169,7 @@ export interface LlamaProtocolSnap {
   /** In DefiLlama's double-counted TVL bucket. */
   doublecounted?: boolean;
   /** Why TVL sits outside the Atlas total, if it does. */
-  tvlExclusion?: "doublecounted" | "cex" | "locker" | "bridge" | "chain-income" | null;
+  tvlExclusion?: "doublecounted" | "cex" | "locker" | "bridge" | "chain-income" | "outside-total" | null;
   chainIncome?: boolean;
 }
 

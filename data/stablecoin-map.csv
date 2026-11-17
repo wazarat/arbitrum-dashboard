@@ -1,0 +1,9 @@
+DefiLlama id,Symbol,Project,Address,Decimals,Source
+2,USDC,USDC,0xaf88d065e77c8cc2239327c5edb3a432268e5831,6,https://developers.circle.com/stablecoins/usdc-contract-addresses
+1,USDT,USDT0,,,https://defillama.com/stablecoin/tether
+146,USDe,Ethena (USDe),,,https://defillama.com/stablecoin/ethena-usde
+209,USDS,Sky,,,https://defillama.com/stablecoin/sky-dollar
+309,USDai,USD.AI,,,https://defillama.com/stablecoin/usd-ai
+120,PYUSD,PayPal USD (PYUSD),,,https://defillama.com/stablecoin/paypal-usd
+286,USDG,USDG,,,https://defillama.com/stablecoin/global-dollar
+6,FRAX,Frax,,,https://defillama.com/stablecoin/frax

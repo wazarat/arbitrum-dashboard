@@ -1,0 +1,85 @@
+Project,Dex id,Dex name,Kind
+Aerodrome (Aero),aero-slipstream-arbitrum,Aero Slipstream (Arbitrum),dex
+ApeBond,apeswap-arbitrum,Apeswap (Arbitrum),dex
+Arbswap,arbswap-stableswap-arbitrum,Arbswap StableSwap (Arbitrum),dex
+Arbswap,arbswap_arbitrum_one,Arbswap (Arbitrum One),dex
+Balancer,balancer-v3-arbitrum,Balancer V3 (Arbitrum),dex
+Balancer,balancer_arbitrum,Balancer V2 (Arbitrum),dex
+Camelot,camelot,Camelot,dex
+Camelot,camelot-v3,Camelot V3,dex
+Camelot,camelot-v4,Camelot V4,dex
+Chronos,chronos,Chronos,dex
+Curve,curve_arbitrum,Curve (Arbitrum),dex
+Ekubo Protocol,ekubo-v3-arbitrum,Ekubo V3 (Arbitrum),dex
+Gammaswaplabs,deltaswap,Deltaswap (Arbitrum),dex
+KyberSwap,kyberswap_classic_arbitrum,Kyberswap Classic (Arbitrum),dex
+KyberSwap,kyberswap_elastic_arbitrum,Kyberswap Elastic (Arbitrum),dex
+Maverick Protocol,maverick-v2-arbitrum,Maverick V2 (Arbitrum),dex
+PancakeSwap,pancakeswap-stableswap-arbitrum,Pancakeswap Stableswap (Arbitrum),dex
+PancakeSwap,pancakeswap-v2-arbitrum,Pancakeswap V2 (Arbitrum),dex
+PancakeSwap,pancakeswap-v3-arbitrum,Pancakeswap V3 (Arbitrum),dex
+Ramses,ramses,Ramses,dex
+Ramses,ramses-legacy-arbitrum,Ramses Legacy (Arbitrum),dex
+Ramses,ramses-v2,Ramses V2,dex
+Ramses,ramses-v3-arbitrum,Ramses V3 (Arbitrum),dex
+Rubicon,rubicon-clmm-arbitrum,Rubicon CLMM (Arbitrum),dex
+SMARDEX,smardex-arbitrum,SmarDex (Arbitrum),dex
+SolidLizard,solidlizard,SolidLizard,dex
+Solidly,solidly-v3-arbitrum,Solidly V3 (Arbitrum),dex
+SpartaDex,spartadex,SpartaDEX,dex
+Sushi,sushiswap-v3-arbitrum,Sushiswap V3 (Arbitrum),dex
+Sushi,sushiswap_arbitrum,SushiSwap (Arbitrum),dex
+Swapr,swapr_arbitrum,Swapr (Arbitrum),dex
+Trader Joe,traderjoe-v2-1-arbitrum,LFJ V2.1 (Arbitrum),dex
+Trader Joe,traderjoe-v2-2-arbitrum,LFJ V2.2 (Arbitrum),dex
+Trader Joe,traderjoe-v2-arbitrum,LFJ V2 (Arbitrum),dex
+Uniswap,uniswap-v2-arbitrum,Uniswap V2 (Arbitrum),dex
+Uniswap,uniswap-v4-arbitrum,Uniswap V4 (Arbitrum),dex
+Uniswap,uniswap_v3_arbitrum,Uniswap V3 (Arbitrum),dex
+Zyberswap,zyberswap,Zyberswap,dex
+,3xcalibur,3xcalibur,
+,aegis,Aegis,
+,alienfi,AlienFi,
+,antfarm-arbitrum,Antfarm (Arbitrum),
+,arbidex,Arbidex,
+,arbidex-v3,Arbidex V3,
+,arbiswap,ArbiSwap,
+,archly-arbitrum,Archly (Arbitrum),
+,auragi,Auragi,
+,crescentswap,CrescentSwap,
+,dackieswap-v2-arbitrum,DackieSwap V2 (Arbitrum),
+,dackieswap-v3-arbitrum,DackieSwap V3 (Arbitrum),
+,darwinswap,DarwinSwap,
+,degenbrains,Degenbrains,
+,dex-on-crypto-arbitrum,Dex on Crypto (Arbitrum),
+,dexswap,dexSWAP,
+,elk_finance_arbitrum,Elk Finance (Arbitrum),
+,ethervista-arbitrum,EtherVista (Arbitrum),
+,fluid-arbitrum,Fluid (Arbitrum),
+,forge-sx,Forge Sx,
+,fraxswap_arbitrum,Fraxswap (Arbitrum),
+,gasx,GasX,
+,kaleidoswap-arbitrum,KaleidoSwap (Arbitrum),
+,kewlswap-arbitrum,KEWLSwap (Arbitrum),
+,lfgswap-arbitrum,LFGswap (Arbitrum),
+,magicswap,Magicswap,
+,mindgames-arbitrum,Mindgames (Arbitrum),
+,mm-finance-arbitrum,MM Finance (Arbitrum),
+,mm-finance-v3-arbitrum,MM Finance V3 (Arbitrum),
+,moonbase-alpha,Moonbase Alpha,
+,oasisswap,OasisSwap,
+,omni-exchange-v2-arbitrum,Omni Exchange V2 (Arbitrum),
+,omni-exchange-v3-arbitrum,Omni Exchange V3 (Arbitrum),
+,oreoswap,OreoSwap,
+,pixelswap-arbitrum,PixelSwap (Arbitrum),
+,sharkyswap,SharkySwap,
+,shekelswap,ShekelSwap,
+,solunea-arbitrum,Solunea (Arbitrum),
+,spinaqdex,SpinaqDex,
+,squadswap-v2-arbitrum,SquadSwap V2 (Arbitrum),
+,squadswap-v3-arbitrum,SquadSwap V3 (Arbitrum),
+,sterling,Sterling,
+,swapfish,SwapFish,
+,swaprum,Swaprum,
+,whitehole-arbitrum,Whitehole (Arbitrum),
+,woken-exchange-arbitrum,Woken Exchange (Arbitrum),

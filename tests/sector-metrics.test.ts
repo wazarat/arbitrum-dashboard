@@ -188,9 +188,9 @@ describe("headline ranking and tiers", () => {
     }
   });
 
-  it.skipIf(!HAS_HISTORY)("puts Morpho first in lending by total deposited, above its own TVL", () => {
+  it.skipIf(!HAS_HISTORY)("puts Aave first in lending by total deposited, above its own TVL", () => {
     const [top] = sectorLeaders(projects, "Lending & Credit", end);
-    expect(top.project.name).toBe("Morpho");
+    expect(top.project.name).toBe("Aave");
     expect(top.headline?.def.id).toBe("deposited");
     expect(top.headline?.value ?? 0).toBeGreaterThan(top.project.tvl ?? 0);
   });

@@ -1,5 +1,5 @@
 /**
- * Seeds data/gecko-dex-map.csv: one row per GeckoTerminal DEX id on network base, mapped to an Atlas
+ * Seeds data/gecko-dex-map.csv: one row per GeckoTerminal DEX id on the chain's network, mapped to an Atlas
  * project where the names match. Existing rows are kept (hand edits win); new ids are appended. A row with
  * an empty Project means reviewed and left out, the same convention as data/defillama-map.csv.
  *

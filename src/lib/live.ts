@@ -25,13 +25,18 @@ export interface WindowSum {
 }
 
 /** Sum of a flow over the n days ending at `end` (inclusive). Missing days count as 0; null when no point falls in the window. */
+/**
+ * Sum of a daily flow over the n days ending at `end`. A negative day counts as zero, the way DefiLlama
+ * builds its own 30-day totals: on Nov 17 2026 Hypernova, Overtime and Hegic reported negative revenue days,
+ * and DefiLlama's totals for them equal the sum of their positive days exactly.
+ */
 export function sumWindow(series: Series, end: DateStr, n: number): WindowSum {
   const start = addDays(end, -(n - 1));
   let total = 0;
   let days = 0;
   for (const [d, v] of series) {
     if (d < start || d > end) continue;
-    total += v;
+    total += Math.max(0, v);
     days += 1;
   }
   return { value: days ? total : null, days };

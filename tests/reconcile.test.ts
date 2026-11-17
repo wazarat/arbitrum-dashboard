@@ -92,3 +92,33 @@ describe("reconcile and groupExclusions", () => {
     ]);
   });
 });
+
+describe("Arbitrum reconciliation rules", () => {
+  const off = { tvl: false, volume: false, fees: false, revenue: false };
+  it("keeps RWA and basis trading out of both halves, since DefiLlama leaves them out of chain TVL", () => {
+    const ps = [
+      ...protocols,
+      snap("usd-ai", "USD AI", "RWA", 157, { tvlExclusion: "outside-total", inChainTotal: off }),
+      snap("drakewell-usddw", "Drakewell USDdw", "Basis Trading", 12, { doublecounted: true, tvlExclusion: "outside-total", inChainTotal: off }),
+    ];
+    const r = reconcileTvl(ps, [[END, 1010]], [[END, 530]], END);
+    expect(r.checks.find((c) => c.id === "tvl")!.ours).toBe(1010);
+    expect(r.checks.find((c) => c.id === "tvl-doublecounted")!.ours).toBe(530);
+  });
+
+  it("reads a listing's own TVL history for the day before the listing endpoint's value", () => {
+    // The listing endpoint carries a later revision for the curator; the history agrees with DefiLlama's chain series.
+    const ps = protocols.map((p) => (p.slug === "steakhouse-financial" ? { ...p, tvlPrevDay: [END, 590] as [string, number] } : p));
+    const listing = reconcileTvl(ps, [[END, 1010]], [[END, 530]], END);
+    expect(listing.checks.find((c) => c.id === "tvl-doublecounted")!.ok).toBe(false);
+    const history = reconcileTvl(ps, [[END, 1010]], [[END, 530]], END, { "steakhouse-financial": [[END, 530]] });
+    expect(history.checks.find((c) => c.id === "tvl-doublecounted")!.ok).toBe(true);
+  });
+});
+
+describe("window sums", () => {
+  it("count a negative day as zero, the way DefiLlama builds its 30-day totals", async () => {
+    const { sumWindow } = await import("@/lib/live");
+    expect(sumWindow([["2026-11-07", 100], ["2026-11-08", -40]], END, 30).value).toBe(100);
+  });
+});

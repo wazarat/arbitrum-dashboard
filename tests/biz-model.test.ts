@@ -36,14 +36,14 @@ describe("paired fees and revenue", () => {
 });
 
 /**
- * DefiLlama /summary/fees/{slug}?dataType=dailyFees and dailyRevenue, Base only, summed Oct 18 to Nov 16 2026,
+ * DefiLlama /summary/fees/{slug}?dataType=dailyFees and dailyRevenue, Arbitrum only, the 30-day totals of the chain overview on Nov 17 2026,
  * fetched on Nov 17. Listings DefiLlama counts in the chain total for both metrics.
  */
 const DEFILLAMA = {
-  "Aero Slipstream": { names: ["Aero Slipstream"], fees: 5_514_967, revenue: 5_012_241 },
-  "Uniswap V3": { names: ["Uniswap V3"], fees: 10_032_596, revenue: 1_902_756 },
-  "Curve DEX": { names: ["Curve DEX"], fees: 1_749_613, revenue: 874_806 },
-  Venice: { names: ["Venice"], fees: 1_139_469, revenue: 1_139_469 },
+  "Aero Slipstream": { names: ["Aero Slipstream"], fees: 122_177, revenue: 121_259 },
+  "Uniswap V3": { names: ["Uniswap V3"], fees: 1_913_240, revenue: 503_120 },
+  "GMX EVM": { names: ["GMX EVM"], fees: 1_353_536, revenue: 487_432 },
+  "Aave V3": { names: ["Aave V3"], fees: 1_028_337, revenue: 151_495 },
 };
 
 describe.skipIf(!HAS_HISTORY)("capture against DefiLlama, Oct 18 to Nov 16", () => {
@@ -54,9 +54,10 @@ describe.skipIf(!HAS_HISTORY)("capture against DefiLlama, Oct 18 to Nov 16", () 
   for (const [project, d] of Object.entries(DEFILLAMA)) {
     it(`${project} keeps ${((d.revenue / d.fees) * 100).toFixed(1)}% of fees`, () => {
       const p = pairedSums(d.names, fees, revenue, "2026-11-16", 30);
-      // Days inside DefiLlama's 7-day revision window may still move a little until Nov 23.
-      expect(p!.fees / d.fees).toBeCloseTo(1, 2);
-      expect(p!.revenue / d.revenue).toBeCloseTo(1, 2);
+      // The overview's 30-day field was read mid-day on Nov 17, a day off the stored window, and days inside
+      // DefiLlama's 7-day revision window may still move, so the sums agree within 2% and the capture closely.
+      expect(Math.abs(p!.fees / d.fees - 1)).toBeLessThan(0.02);
+      expect(Math.abs(p!.revenue / d.revenue - 1)).toBeLessThan(0.02);
       expect(capture(p)!).toBeCloseTo(d.revenue / d.fees, 2);
     });
   }

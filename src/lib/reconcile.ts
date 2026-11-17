@@ -84,12 +84,21 @@ export function reconcileFlow(metric: Exclude<FlagMetric, "tvl">, protocols: Lla
  * double-counted bucket (CEX deposits are in neither), and the bucket itself is
  * published as its own series, so both halves are checked.
  */
-export function reconcileTvl(protocols: LlamaProtocolSnap[], chainTvl: Series, doublecounted: Series, end: DateStr): { checks: ReconcileCheck[]; atlas: number; excluded: Exclusion[] } {
-  const withTvl = protocols.filter((p) => p.tvlPrevDay && p.tvlPrevDay[0] === end && p.tvlPrevDay[1] > 0);
-  const val = (p: LlamaProtocolSnap) => p.tvlPrevDay?.[1] ?? 0;
-  // DefiLlama keeps token lockers in chain TVL but leaves out exchanges and bridge deposits.
-  const counted = withTvl.filter((p) => !p.doublecounted && p.tvlExclusion !== "cex" && p.tvlExclusion !== "bridge");
-  const dc = withTvl.filter((p) => p.doublecounted);
+export function reconcileTvl(protocols: LlamaProtocolSnap[], chainTvl: Series, doublecounted: Series, end: DateStr, tvlHistory: SeriesMap = {}): { checks: ReconcileCheck[]; atlas: number; excluded: Exclusion[] } {
+  // A listing's own TVL history for the day wins over the listing endpoint's previous-day value: on Nov 16 2026 the
+  // listing endpoint carried later revisions for Steakhouse Financial (+$6.3M), Gauntlet (+$5.6M) and Pendle V2,
+  // while DefiLlama's chain series agreed with the histories. The per-project figures read the same histories.
+  const fromHistory = (p: LlamaProtocolSnap) => {
+    const s = tvlHistory[p.slug];
+    return s ? valueAt(s, end, 0) : null;
+  };
+  const val = (p: LlamaProtocolSnap) => fromHistory(p) ?? (p.tvlPrevDay?.[0] === end ? p.tvlPrevDay[1] : 0);
+  const withTvl = protocols.filter((p) => val(p) > 0);
+  // DefiLlama keeps token lockers in chain TVL but leaves out exchanges, bridge deposits and the categories outside
+  // its chain TVL altogether (RWA, basis trading), which sit in neither half.
+  const outside = (p: LlamaProtocolSnap) => p.tvlExclusion === "cex" || p.tvlExclusion === "bridge" || p.tvlExclusion === "outside-total";
+  const counted = withTvl.filter((p) => !p.doublecounted && !outside(p));
+  const dc = withTvl.filter((p) => p.doublecounted && !outside(p));
   const sum = (ps: LlamaProtocolSnap[]) => ps.reduce((a, p) => a + val(p), 0);
   const toC = (ps: LlamaProtocolSnap[]) => ps.map((p) => ({ name: p.name, value: val(p) })).sort(desc);
   const chainV = valueAt(chainTvl, end, 0);
@@ -105,7 +114,7 @@ export function reconcileTvl(protocols: LlamaProtocolSnap[], chainTvl: Series, d
     .sort(desc);
   return {
     checks: [
-      check("tvl", "TVL counted by DefiLlama", countedSum, chainV, chainV !== null && countedSum > chainV ? toC(counted) : toC(withTvl.filter((p) => p.doublecounted || p.tvlExclusion === "cex" || p.tvlExclusion === "bridge"))),
+      check("tvl", "TVL counted by DefiLlama", countedSum, chainV, chainV !== null && countedSum > chainV ? toC(counted) : toC(withTvl.filter((p) => p.doublecounted || outside(p)))),
       check("tvl-doublecounted", "TVL double counted", dcSum, dcV, dcV !== null && dcSum > dcV ? toC(dc) : toC(counted)),
     ],
     atlas: sum(atlasPs),
@@ -118,8 +127,9 @@ export function reconcile(
   store: Record<Exclude<FlagMetric, "tvl">, SeriesMap>,
   chain: { tvl: Series; tvlDoublecounted: Series; volume: Series; fees: Series; revenue: Series },
   end: DateStr,
+  tvlHistory: SeriesMap = {},
 ): ReconcileResult {
-  const tvl = reconcileTvl(protocols, chain.tvl, chain.tvlDoublecounted, end);
+  const tvl = reconcileTvl(protocols, chain.tvl, chain.tvlDoublecounted, end, tvlHistory);
   const checks = [...tvl.checks];
   const excluded = { tvl: tvl.excluded } as ReconcileResult["excluded"];
   const atlas = { tvl: tvl.atlas } as ReconcileResult["atlas"];

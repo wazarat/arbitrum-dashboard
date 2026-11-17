@@ -17,6 +17,8 @@ import { HistoryChart } from "@/components/charts/history-chart";
 import { PeerSuggestions } from "@/components/compare/add-project";
 import { SuggestCorrectionButton } from "@/components/forms/tally-buttons";
 import { ConfidenceText } from "@/components/funding/rounds-table";
+import { coFundedByRobinhoodChain } from "@/lib/money-flow";
+import { isRaise } from "@/lib/rounds";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
@@ -322,6 +324,9 @@ function ProjectBody({ p, all, onOpen }: { p: Project; all: Project[]; onOpen: (
                       · {r.date ? fmtDate(r.date) : "undated"} · {r.amount !== null ? fmtUsdFull(r.amount) : (r.amountNote ?? "undisclosed")}
                     </span>
                     {r.leadInvestors.length > 0 && <span className="text-ink-300"> · led by {r.leadInvestors.join(", ")}</span>}
+                    {r.related && <span className="text-ink-300" data-testid="round-related"> · Arbitrum related</span>}
+                    {coFundedByRobinhoodChain(r) && <span className="text-ink-300"> · co-funded by Robinhood Chain</span>}
+                    {!isRaise(r) && <span className="text-ink-300" data-testid="round-not-raise"> · a token purchase, not a raise, so it is left out of raised totals</span>}
                     <span className="ml-1 inline-flex items-center gap-1 align-middle">
                       <ConfidenceText confidence={r.confidence} />
                       {r.sourceUrl && <Ext href={r.sourceUrl}>source</Ext>}

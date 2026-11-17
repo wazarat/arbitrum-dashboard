@@ -72,3 +72,14 @@ describe("compare", () => {
     expect(resolvePreset(["Arcus", "Lighter", "Meridian"], lookup)).toEqual(["arcus", "lighter"]);
   });
 });
+
+describe("indexTo100 base", () => {
+  it("skips a series' seeding days, so a new deployment does not read as an 800-fold rise", () => {
+    const { start, indexed } = indexTo100([
+      [100, 101, 102, 103],
+      [5, 4_000, 4_100, 4_200],
+    ]);
+    expect(start).toBe(1);
+    expect(indexed[1][3]).toBeCloseTo(105, 5);
+  });
+});

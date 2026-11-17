@@ -158,18 +158,24 @@ export function crossSector(selected: Project[]): string[] {
   return Array.from(new Set(selected.map((p) => p.sector)));
 }
 
+/** A series counts as started once it reaches this share of its own peak in the window. */
+export const INDEX_START_SHARE = 0.01;
+
 /**
- * Index each aligned series to 100 at the first date where every project that has any data
- * shows a positive value. Projects with no data at all stay null instead of blanking the chart.
+ * Index each aligned series to 100 at the first date where every project that has any data has reached
+ * INDEX_START_SHARE of its own peak. A deployment's seeding days are left out of the base, so a pool that
+ * opened with a few dollars (Aero Slipstream on Arbitrum, Oct 20 2026) does not read as an 800-fold rise.
+ * Projects with no data at all stay null instead of blanking the chart.
  */
 export function indexTo100(series: Array<Array<number | null>>): { start: number; indexed: Array<Array<number | null>>; skipped: number[] } {
   const n = series[0]?.length ?? 0;
   const hasData = series.map((s) => s.some((v) => v !== null && v > 0));
   const active = series.filter((_, k) => hasData[k]);
+  const peaks = active.map((s) => Math.max(...s.map((v) => v ?? 0)));
   let start = -1;
   if (active.length >= 1) {
     for (let i = 0; i < n; i++) {
-      if (active.every((s) => s[i] !== null && (s[i] as number) > 0)) {
+      if (active.every((s, k) => s[i] !== null && (s[i] as number) > 0 && (s[i] as number) >= peaks[k] * INDEX_START_SHARE)) {
         start = i;
         break;
       }

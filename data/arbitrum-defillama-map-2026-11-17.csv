@@ -1,0 +1,364 @@
+Project,DefiLlama id,DefiLlama slugs,DefiLlama listing names,Notes
+0x,2116,0x,0x,DefiLlama category DEX Aggregator
+1inch,parent#1inch,1inch-aqua; 1inch-swap,1inch Aqua; 1inch Swap,DefiLlama category DEX Aggregator
+Aark,3376,aark-digital,Aark Digital,DefiLlama category Derivatives
+aarnâ protocol,5773,aarna-protocol,Aarna Protocol,DefiLlama category Yield
+Aave,parent#aave,aave-v3,Aave V3,DefiLlama category Lending
+Abracadabra,parent#abracadabra,abracadabra-spell; mim-swap,Abracadabra Spell; MIM Swap,DefiLlama category CDP
+Accountable,7092,accountable,Accountable,DefiLlama category Uncollateralized Lending
+Across,1207,across,Across,DefiLlama category Cross Chain Bridge
+ACryptoS,208,acryptos,ACryptoS,DefiLlama category Liquidity Manager
+Aera,parent#aera,aera-v2; aera-v3,Aera V2; Aera V3,DefiLlama category Onchain Capital Allocator
+Aerodrome (Aero),parent#aero-protocol,aero-basic; aero-slipstream,Aero Basic; Aero Slipstream,DefiLlama category Dexs
+Aethir,5591,aethir,Aethir,DefiLlama category Developer Tools
+Aevo,parent#aevo,aevo-perps,Aevo Perps,DefiLlama category Derivatives
+Alchemix,parent#alchemix,alchemix-v2; alchemix-v3,Alchemix V2; Alchemix V3,DefiLlama category Synthetics
+Allbridge,parent#allbridge,allbridge-core,Allbridge Core,DefiLlama category Bridge
+AlphaX,4975,alphax,AlphaX,DefiLlama category Derivatives
+Ample,7493,ample,Ample,DefiLlama category Yield Lottery
+Antarctic,7016,antarctic,Antarctic,DefiLlama category Derivatives
+ApeBond,parent#apeswap,apeswap-amm,ApeSwap AMM,DefiLlama category Dexs
+ApeX Omni,parent#apex-protocol,apex-omni; apex-pro,ApeX Pro; Apex Omni,DefiLlama category Derivatives
+Aquarius Loan,3360,aquarius-loan,Aquarius Loan,DefiLlama category Lending
+Arbitrove,3309,arbitrove,Arbitrove,DefiLlama category Indexes
+Arbitrum Bridge,parent#arbitrum-foundation,arbitrum-bridge; arbitrum-nitro; arbitrum-timeboost,Arbitrum Bridge; Arbitrum Nitro; Arbitrum Timeboost,DefiLlama category Canonical Bridge
+Arbitrum Foundation,parent#arbitrum-foundation,arbitrum-bridge; arbitrum-nitro; arbitrum-timeboost,Arbitrum Bridge; Arbitrum Nitro; Arbitrum Timeboost,DefiLlama category Canonical Bridge
+Arbius,5951,arbius,Arbius,DefiLlama category AI Agents
+Arbswap,parent#arbswap,arbswap-amm; arbswap-stableswap,Arbswap AMM; Arbswap StableSwap,DefiLlama category Dexs
+Arrakis,parent#arrakis-finance,arrakis-modular; arrakis-v2,Arrakis Modular; Arrakis V2,DefiLlama category Liquidity Manager
+Aster (ApolloX),parent#astherus,apx-bridge; aster-bridge,APX Bridge; Aster Bridge,DefiLlama category Bridge
+ATOMA,8300,atoma,ATOMA,DefiLlama category Basis Trading
+Aura Finance,1918,aura,Aura,DefiLlama category Yield
+AUTOfinance,438,autofinance,AUTOfinance,DefiLlama category Yield
+AutoRange,8269,autorange,AutoRange,DefiLlama category Dexs
+Axelar Network,parent#axelar-network,axelar; axelar-cross-chain,Axelar; Axelar Cross Chain,DefiLlama category Bridge
+AZverse,parent#azverse,azverse-perps,AZverse Perps,DefiLlama category Derivatives
+Backpack,4266,backpack,Backpack,"CEX reserves only, not TVL; DefiLlama category CEX"
+Balanced,parent#balanceddao,balanced-exchange,Balanced Exchange,DefiLlama category Dexs
+Balancer,parent#balancer,balancer-cow-amm; balancer-v2; balancer-v3,Balancer CoW AMM; Balancer V2; Balancer V3,DefiLlama category Dexs
+Basalt Vault,8191,basalt-vault,Basalt Vault,DefiLlama category Yield
+Beanstalk,parent#beanstalk,basin-exchange; beanstalk,Basin Exchange; Beanstalk,DefiLlama category Dexs
+Bedrock,parent#bedrock,bedrock-unibtc,Bedrock uniBTC,DefiLlama category Anchor BTC
+Beefy Finance,326,beefy,Beefy,DefiLlama category Yield Aggregator
+Biconomy,1578,hyphen,Hyphen,DefiLlama category Bridge
+Binance,2269,binance-cex,Binance CEX,"CEX reserves only, not TVL; DefiLlama category CEX"
+Biswap DEX,parent#biswap,biswap-v3,Biswap V3,DefiLlama category Dexs
+Bitget,2352,bitget,Bitget,"CEX reserves only, not TVL; DefiLlama category CEX"
+Bitget Wallet,parent#bitget-wallet,bitget-wallet-card; bitget-wallet-perps; bitget-wallet-x,Bitget Wallet Card; Bitget Wallet Perps; Bitget Wallet X,DefiLlama category DEX Aggregator
+Bitkub,5517,bitkub,Bitkub,"CEX reserves only, not TVL; DefiLlama category CEX"
+Blackwing,4413,blackwing,Blackwing,DefiLlama category Farm
+Bleap,7521,bleap-card,Bleap Card,DefiLlama category Crypto Card Issuer
+Bracket,parent#bracket-protocol,bracket-escrow-staking; bracketx,Bracket Escrow Staking; BracketX,DefiLlama category Onchain Capital Allocator
+Buffer Finance,1304,buffer-finance,Buffer Finance,DefiLlama category Options
+Bundie,7773,bundie,Bundie,DefiLlama category Yield Aggregator
+Bungee Exchange,parent#bungee,bungee-bridge-aggregator; bungee-dex,Bungee Bridge Aggregator; Bungee DEX,DefiLlama category DEX Aggregator
+Butter Network,2364,butter-network,Butter Network,DefiLlama category Cross Chain Bridge
+Bybit,2286,bybit,Bybit,"CEX reserves only, not TVL; DefiLlama category CEX"
+Caldera,8368,caldera,Caldera,DefiLlama category Bridge Aggregator
+Camelot,parent#camelot,camelot-v2; camelot-v3; camelot-v4,Camelot V2; Camelot V3; Camelot V4,DefiLlama category Dexs
+Cap Finance,parent#cap-finance,cap-finance-v1-v3; cap-finance-v4,Cap Finance V4; Cap Finance v1-v3,DefiLlama category Derivatives
+Celer cBridge,801,cbridge,cBridge,DefiLlama category Bridge
+ChainGPT,3582,chaingpt,ChainGPT,DefiLlama category Launchpad
+Chainlink,parent#chainlink,ccip,CCIP,DefiLlama category Bridge
+Chronos,parent#chronos,chronos-v1; chronos-v2,Chronos V1; Chronos V2,DefiLlama category Dexs
+CIAN Protocol,parent#cian-protocol,cian-yield-layer,CIAN Yield Layer,DefiLlama category Yield Aggregator
+Coinbase,5810,coinbase-bridge,Coinbase Bridge,DefiLlama category Bridge
+Coinbase Wallet,5587,base-app,Base App,DefiLlama category Wallets
+Common,6125,common,Common,DefiLlama category Privacy
+Compound,parent#compound-finance,compound-v3,Compound V3,DefiLlama category Lending
+Concrete,5751,concrete,Concrete,DefiLlama category Onchain Capital Allocator
+Contango,parent#contango,contango-v1; contango-v2,Contango V1; Contango V2,DefiLlama category Derivatives
+Convex Finance,319,convex-finance,Convex Finance,DefiLlama category Yield
+CoW Swap,2643,cowswap,CoWSwap,DefiLlama category DEX Aggregator
+CrossCurve,5146,crosscurve,CrossCurve,DefiLlama category Cross Chain Bridge
+Cryptex Finance,parent#cryptex-finance,cryptex-pi; cryptex-v2,Cryptex Pi; Cryptex V2,DefiLlama category Indexes
+Crypto.com,2270,crypto-com,Crypto-com,"CEX reserves only, not TVL; DefiLlama category CEX"
+Curve,parent#curve-finance,curve-dex; curve-llamalend,Curve DEX; Curve LlamaLend,DefiLlama category Dexs
+CYBRO,5139,cybro,Cybro,DefiLlama category Yield Aggregator
+D2 Finance,4846,d2-finance,D2 Finance,DefiLlama category Onchain Capital Allocator
+D8X,3924,d8x,D8X,DefiLlama category Derivatives
+DACM,8592,dacm,DACM,DefiLlama category Risk Curators
+DAMM Capital,8615,damm-capital,DAMM Capital,DefiLlama category Risk Curators
+De1 Exchange,533,de1,De1,DefiLlama category DEX Aggregator
+DeBank,5410,debank-cloud,DeBank Cloud,DefiLlama category Developer Tools
+deBridge,1462,debridge,deBridge,DefiLlama category Bridge
+DeFi Saver,parent#defi-saver,defi-saver-asset-management,Defi Saver Asset Management,DefiLlama category CDP Manager
+defi.money,5003,defi.money,defi.money,DefiLlama category CDP
+DeltaPrime,2479,deltaprime,DeltaPrime,DefiLlama category Leveraged Farming
+Denaria,parent#denaria,denaria-gmx; denaria-vamm,Denaria GMX; Denaria vAMM,DefiLlama category Derivatives
+Deri Protocol,parent#deri,deri-protocol; deri-v4,Deri Protocol; Deri V4,DefiLlama category Options
+Derive,parent#lyra,derive-v1; derive-v2,Derive V1; Derive V2,DefiLlama category Options
+Dexalot,parent#dexalot,dexalot-dex; dexalot-omnivaults; dexalot-portfolio,Dexalot DEX; Dexalot OmniVaults; Dexalot Portfolio,DefiLlama category Bridge
+dForce,parent#dforce,dforce-lending; maxshot; unitus,MaxShot; Unitus; dForce Lending,DefiLlama category Lending
+DFX Finance,parent#dfx-finance,dfx-v2; dfx-v3,DFX V2; DFX V3,DefiLlama category Dexs
+Dinari,4196,dinari,Dinari,DefiLlama category RWA
+DoDo,parent#dodo,dodo-amm,DODO AMM,DefiLlama category Dexs
+Dolomite,2187,dolomite,Dolomite,DefiLlama category Lending
+Double,5024,double,Double,DefiLlama category Yield
+Doubler,4855,doubler,Doubler,DefiLlama category Derivatives
+Drakewell,parent#drakewell,drakewell-usddw,Drakewell USDdw,DefiLlama category Basis Trading
+Dune,7780,dune-protocol,Dune Protocol,DefiLlama category Gamified Mining
+DxSale,1901,dxsale,DxSale,DefiLlama category Launchpad
+edgeX,parent#edgex,edgex-bridge,edgeX Bridge,DefiLlama category Bridge
+Envelop,4317,envelop,Envelop,DefiLlama category NftFi
+Enzyme,225,enzyme-finance,Enzyme Finance,DefiLlama category Indexes
+Equilibria Finance,3091,equilibria,Equilibria,DefiLlama category Yield
+Estate Protocol,5226,estate-protocol,Estate Protocol,DefiLlama category RWA
+Ether Fi,parent#ether-fi,ether.fi-stake,ether.fi Stake,DefiLlama category Liquid Staking
+Euclid Protocol,7907,euclid-protocol,Euclid Protocol,DefiLlama category Cross Chain Bridge
+Euler Finance,parent#euler,euler-v2,Euler V2,DefiLlama category Lending
+EVEDEX,6497,evedex,Evedex,DefiLlama category Derivatives
+Everything,7663,everything,Everything,DefiLlama category Lending
+Exit Tech,parent#bonsaidao-ecosystem,exit.tech; umami-finance; vendor-v1; vendor-v2,Umami Finance; Vendor V1; Vendor V2; exit.tech,DefiLlama category Yield
+Factor.fi,parent#factor,factor-leverage-vault; factor-v1; factor-v2,Factor Leverage Vault; Factor V1; Factor V2,DefiLlama category Leveraged Farming
+Farcaster,parent#farcaster,clanker; farcaster-sofi,Farcaster SoFi; clanker,DefiLlama category SoFi
+Fluid,parent#fluid,fluid-dex; fluid-lending,Fluid DEX; Fluid Lending,DefiLlama category Lending
+Folks Finance,parent#folks-finance,folks-finance-xchain,Folks Finance xChain,DefiLlama category Lending
+Foxify,6865,foxify,foxify,DefiLlama category Derivatives
+Frax,parent#frax-finance,frax-swap; fraxlend,Frax Swap; Fraxlend,DefiLlama category Lending
+Gains Network (gTrade),1018,gains-network,Gains Network,DefiLlama category Derivatives
+Gamma,355,gamma,Gamma,DefiLlama category Liquidity Manager
+Gammaswaplabs,parent#gammaswaplabs,deltaswap; gammaswap-classic; gammaswap-open-interest,DeltaSwap; GammaSwap Classic; GammaSwap Open Interest,DefiLlama category Dexs
+Garden Finance,4086,garden,Garden,DefiLlama category Cross Chain Bridge
+Gasp,5518,gasp,Gasp,DefiLlama category Cross Chain Bridge
+Gate.io,2314,gate,Gate,"CEX reserves only, not TVL; DefiLlama category CEX"
+Gauntlet,6202,gauntlet,Gauntlet,DefiLlama category Risk Curators
+Gearbox Protocol,1108,gearbox,Gearbox,DefiLlama category Lending
+Giza,6821,giza,Giza,DefiLlama category AI Agents
+gloop finance,6527,gloop,Gloop,DefiLlama category Lending
+GMD Protocol,2319,gmd-protocol,GMD Protocol,DefiLlama category Yield Aggregator
+GMX,parent#gmx,gmx-evm; gmx-v1-evm,GMX EVM; GMX V1 EVM,DefiLlama category Derivatives
+Go+ Security,parent#goplus-security,goplus-locker-v2; goplus-locker-v3,GoPlus Locker V2; GoPlus Locker V3,DefiLlama category Token Locker
+Goose,5358,goose,Goose,DefiLlama category CeDeFi
+GumBall Protocol,2445,gumball-protocol,GumBall Protocol,DefiLlama category NFT Marketplace
+Gyroscope,2397,gyroscope-protocol,Gyroscope Protocol,DefiLlama category Dexs
+Harmonix,4856,harmonix-finance,Harmonix Finance,DefiLlama category Yield
+Harvest Finance,112,harvest-finance,Harvest Finance,DefiLlama category Yield Aggregator
+hashflow,1447,hashflow,Hashflow,DefiLlama category DEX Aggregator
+Hats.Finance,parent#hats.finance,hats.v2,Hats.V2,DefiLlama category Bug Bounty
+Hegic,128,hegic,Hegic,DefiLlama category Options
+Hermes V2,parent#maia-dao-ecosystem,hermes-v2; maia-dao; ulysses,Hermes V2; Maia DAO; Ulysses,DefiLlama category Yield
+Hibachi,7937,hibachi-bridge,Hibachi Bridge,DefiLlama category Canonical Bridge
+Hinkal Protocol,4487,hinkal,Hinkal,DefiLlama category Privacy
+HLP0,6346,hlp0,HLP0,DefiLlama category Yield
+Holyheld,7377,holyheld-card,Holyheld Card,DefiLlama category Crypto Card Issuer
+Hop Protocol,435,hop-protocol,Hop Protocol,DefiLlama category Cross Chain Bridge
+Hyperithm,6204,hyperithm,Hyperithm,DefiLlama category Risk Curators
+Hyperlane,7468,hyperlane,Hyperlane,DefiLlama category Cross Chain Bridge
+Hyperliquid,parent#hyperliquid,hyperliquid-bridge,Hyperliquid Bridge,DefiLlama category Bridge
+Hypernova,8803,hypernova,Hypernova,DefiLlama category Trading App
+Ideamarket,1064,ideamarket,Ideamarket,DefiLlama category Derivatives
+Idle,parent#pareto,idle; pareto-credit,Idle; Pareto Credit,DefiLlama category Yield Aggregator
+Impermax Finance,parent#impermax-finance,impermax-v2; impermax-v3,Impermax V2; Impermax V3,DefiLlama category Lending
+Index Coop,172,index-coop,Index Coop,DefiLlama category Indexes
+INFINIT,6852,infinit,INFINIT,DefiLlama category Onchain Capital Allocator
+Integral SIZE,291,integral,Integral,DefiLlama category Dexs
+Interport Finance,2839,interport-finance,Interport Finance,DefiLlama category Cross Chain Bridge
+IPOR Protocol,parent#ipor,ipor-derivatives; ipor-fusion,IPOR Derivatives; IPOR Fusion,DefiLlama category Onchain Capital Allocator
+Ithaca Protocol,4418,ithaca-protocol,Ithaca Protocol,DefiLlama category Options
+iZUMi Finance,parent#izumi-finance,iziswap; izumi-liquidbox,iZUMi LiquidBox; iZiSwap,DefiLlama category Dexs
+Jasper Vault,4630,jasper-vault,Jasper Vault,DefiLlama category Options
+Jones DAO,1433,jones-dao,Jones DAO,DefiLlama category Yield Aggregator
+Jumper,parent#jumper-exchange,jumper-bridge-aggregator; jumper-dex-aggregator; jumper-perps; jumper-spot,Jumper Bridge Aggregator; Jumper DEX Aggregator; Jumper Perps; Jumper Spot,DefiLlama category DEX Aggregator
+K3 Capital,6205,k3-capital,K3 Capital,DefiLlama category Risk Curators
+Kandle Finance,7140,kandle-finance,Kandle Finance,DefiLlama category Yield
+Kelp DAO,parent#kelp-dao,gain; kelp; kernel,Gain; Kelp; Kernel,DefiLlama category Liquid Restaking
+Kleros,1554,kleros,Kleros,DefiLlama category Services
+Kolo Card,8131,kolo-card,Kolo Card,DefiLlama category Crypto Card Issuer
+KPK,4146,kpk,KPK,DefiLlama category Risk Curators
+Kromatika.Finance,1397,kromatika,Kromatika,DefiLlama category Dexs
+Krystal DeFi,parent#krystal,krystal-auto-farm-vault; krystal-community-vault,Krystal Auto-Farm Vault; Krystal Community Vault,DefiLlama category AI Agents
+Kucoin,2274,kucoin,KuCoin,"CEX reserves only, not TVL; DefiLlama category CEX"
+KyberSwap,parent#kyberswap,kyberswap-classic; kyberswap-elastic,KyberSwap Classic; KyberSwap Elastic,DefiLlama category Dexs
+Lagoon,5547,lagoon,Lagoon,DefiLlama category Onchain Capital Allocator
+Lava,4241,lava,Lava,DefiLlama category Lending
+Layer3,7611,layer3,Layer3,DefiLlama category Foundation
+LayerZero,parent#layerzero,layerzero-v2,LayerZero V2,DefiLlama category Bridge
+LI.FI,parent#li.fi,li.fi-bridge-aggregator; li.fi-dex-aggregator,LI.FI Bridge Aggregator; LI.FI DEX Aggregator,DefiLlama category Bridge Aggregator
+Livepeer,6613,livepeer,Livepeer,DefiLlama category Video Infrastructure
+LlamaPay,1664,llamapay,LlamaPay,DefiLlama category Payments
+Lobster,5015,lobster-protocol,Lobster Protocol,DefiLlama category Yield Aggregator
+Lodestar,parent#lodestar-finance,lodestar-v0; lodestar-v1,Lodestar V0; Lodestar V1,DefiLlama category Lending
+LogX,parent#logx,logx-v2,LogX V2,DefiLlama category Derivatives
+LSP Finance,5297,lsp.finance,LSP.Finance,DefiLlama category Staking Pool
+Magic Eden,6029,magic-eden,Magic Eden,DefiLlama category NFT Marketplace
+Magpie,4457,fly.trade,fly.trade,DefiLlama category Cross Chain Bridge
+Mangrove,4610,mangrove,Mangrove,DefiLlama category Dexs
+Marlin Protocol,5607,marlin-protocol,Marlin Protocol,DefiLlama category Farm
+Matcha,7555,matcha,Matcha,DefiLlama category Trading App
+Maverick Protocol,parent#maverick-protocol,maverick-v2,Maverick V2,DefiLlama category Dexs
+Maya Protocol,3791,maya-protocol,Maya Protocol,DefiLlama category Cross Chain Bridge
+Mayan,parent#mayan-finance,mayan-bridge,Mayan Bridge,DefiLlama category Bridge
+Meson,4536,meson,Meson,DefiLlama category Cross Chain Bridge
+MetaMask,parent#metamask,metamask-perps; metamask-predictions; metamask-usd; metamask-wallet,MetaMask Perps; MetaMask Predictions; MetaMask USD; MetaMask Wallet,DefiLlama category Wallets
+Metric,parent#metric,metric-v0; metric-v1,Metric V0; Metric V1,DefiLlama category Dexs
+MEXC EXCHANGE,3075,mexc,MEXC,"CEX reserves only, not TVL; DefiLlama category CEX"
+Morpheus,4553,morpheusai,MorpheusAI,DefiLlama category AI Agents
+Morpho,parent#morpho,morpho-blue,Morpho Blue,DefiLlama category Lending
+Multichain,591,multichain,Multichain,DefiLlama category Bridge
+Mummy Finance,2361,mummy-finance,Mummy Finance,DefiLlama category Derivatives
+MUX Protocol,parent#mux-protocol,mux-perps,MUX Perps,DefiLlama category Derivatives
+Mycelium Perpetual,parent#mycelium,mycelium-perpetual-pools; mycelium-perpetual-swaps,Mycelium Perpetual Pools; Mycelium Perpetual Swaps,DefiLlama category Derivatives
+MYX.Finance,4319,myx-finance,MYX Finance,DefiLlama category Derivatives
+Native,parent#native,native-credit-pool; native-swap,Native Credit Pool; Native Swap,DefiLlama category Lending
+NEAR Intents,parent#near-protocol,near-bridge; near-intents,NEAR Bridge; NEAR Intents,DefiLlama category Bridge
+Nerite,6434,nerite,Nerite,DefiLlama category CDP
+Neutra Finance,2459,neutra-finance,Neutra Finance,DefiLlama category Yield
+Nexo,2435,nexo,Nexo,"CEX reserves only, not TVL; DefiLlama category CEX"
+Nexo Card,7522,nexo-card,Nexo Card,DefiLlama category Crypto Card Issuer
+NodeOps,6825,nodeops,NodeOps,DefiLlama category DePIN
+Notional Finance,parent#notional,notional-v3,Notional V3,DefiLlama category Lending
+Nova,parent#nova-markets,nova-perps,Nova Perps,DefiLlama category Derivatives
+NUON,2750,nuon-finance,NUON Finance,DefiLlama category CDP
+ODOS,3951,odos,ODOS,DefiLlama category DEX Aggregator
+OKX,2272,okx,OKX,"CEX reserves only, not TVL; DefiLlama category CEX"
+OKX DEX,parent#okx-dex,okx-bridge; okx-swap,OKX Bridge; OKX Swap,DefiLlama category DEX Aggregator
+Olympus Pro,340,olympus-dao,Olympus DAO,DefiLlama category Reserve Currency
+OmniHub,7187,omnihub,OmniHub,DefiLlama category NFT Marketplace
+OpenEden,parent#openeden,openeden-cusdo; openeden-hybond; openeden-prism; openeden-tbill; openeden-usdo,OpenEden HYBOND; OpenEden PRISM; OpenEden TBILL; OpenEden USDO; OpenEden cUSDO,DefiLlama category RWA
+OpenLeverage,1208,openleverage,OpenLeverage,DefiLlama category Dexs
+OpenSea,parent#opensea,opensea-bridge-aggregator; opensea-dex-aggregator; opensea-seaport; opensea-v1; opensea-v2,OpenSea Bridge Aggregator; OpenSea DEX Aggregator; OpenSea V1; OpenSea V2; Opensea Seaport,DefiLlama category NFT Marketplace
+Orai Quant Terminal,7812,orai-quant-terminal,Orai Quant Terminal,DefiLlama category Onchain Capital Allocator
+Orderly Network,parent#orderly-network,orderly-bridge,Orderly Bridge,DefiLlama category Bridge
+Ostium,4932,ostium,Ostium,DefiLlama category Derivatives
+Overnight,5710,overnight-finance,Overnight Finance,DefiLlama category CDP
+Overtime Markets,534,overtime,Overtime,DefiLlama category Prediction Market
+PancakeSwap,parent#pancakeswap,pancakeswap-amm; pancakeswap-amm-v3; pancakeswap-options; pancakeswap-stableswap,PancakeSwap AMM; PancakeSwap AMM V3; PancakeSwap Options; PancakeSwap StableSwap,DefiLlama category Dexs
+Paribus,3054,paribus,Paribus,DefiLlama category Lending
+Peapods Finance,4063,peapods-finance,Peapods Finance,DefiLlama category Yield
+Pell Network,4696,pell-network,Pell Network,DefiLlama category Restaking
+Pendle,parent#pendle,boros; pendle-loop; pendle-v2,Boros; Pendle Loop; Pendle V2,DefiLlama category Yield
+Penpie,parent#magpie-ecosystem,penpie; radpie; wompie,Penpie; Radpie; Wompie,DefiLlama category Yield
+Pheasant Network,8915,pheasant-network,Pheasant Network,DefiLlama category Cross Chain Bridge
+PicWe,5953,picwe,PICWE,DefiLlama category Dexs
+PlutusDAO,2192,plutusdao,PlutusDAO,DefiLlama category Yield
+PRDT Finance,2202,prdt,PRDT,DefiLlama category Prediction Market
+Premia,parent#premia,kyan-blue-perps; premia-v2; premia-v3,Kyan Blue Perps; Premia V2; Premia V3,DefiLlama category Options
+Privacy Pools,parent#privacy-pools,privacy-pools-v1; privacy-pools-v2,Privacy Pools V1; Privacy Pools V2,DefiLlama category Privacy
+PWN,3384,pwn,PWN,DefiLlama category Lending
+Pyth Network,parent#pyth,pyth-core; pyth-entropy; pyth-express-relay; pyth-network; pyth-pro,Pyth Core; Pyth Entropy; Pyth Express Relay; Pyth Network; Pyth Pro,DefiLlama category Oracle
+Rabby Wallet,parent#rabby,rabby-perps; rabby-wallet,Rabby Perps; Rabby Wallet,DefiLlama category Wallets
+Radiant,parent#radiant,radiant-v1; radiant-v2,Radiant V1; Radiant V2,DefiLlama category Lending
+Railgun,1320,railgun,Railgun,DefiLlama category Privacy
+Rain,6924,rain,Rain,DefiLlama category Prediction Market
+Rainbow,parent#rainbow,rainbow-perps; rainbow-predictions; rainbow-spot; rainbow-token-launchpad; rainbow-wallet,Rainbow Perps; Rainbow Predictions; Rainbow Spot; Rainbow Token Launchpad; Rainbow Wallet,DefiLlama category Wallets
+Ramses,parent#ramses-exchange-hl,ramses-cl; ramses-cl-v2; ramses-legacy; ramses-legacy-v2,Ramses CL; Ramses CL V2; Ramses Legacy; Ramses Legacy V2,DefiLlama category Dexs
+Rango,6382,rango,Rango,DefiLlama category Bridge Aggregator
+Re,7182,re,Re,DefiLlama category RWA
+RedotPay,7519,redotpay-card,RedotPay Card,DefiLlama category Crypto Card Issuer
+Relay,8916,relay,Relay,DefiLlama category Cross Chain Bridge
+Renzo,3933,renzo,Renzo,DefiLlama category Liquid Restaking
+Resonate Finance,3130,resonate-finance,Resonate Finance,DefiLlama category Yield
+Revert,parent#revert,revert-compoundor; revert-lend,Revert Compoundor; Revert Lend,DefiLlama category Lending
+Reya,parent#reya,reya-bridge,Reya Bridge,DefiLlama category Canonical Bridge
+rhino.fi,151,rhino.fi,Rhino.fi,DefiLlama category Bridge
+Rho Protocol,parent#rho,rho-protocol; rho-vaults-v1,Rho Protocol; Rho Vaults v1,DefiLlama category Dexs
+Royco,parent#royco-protocol,royco-v1; royco-v2,Royco V1; Royco V2,DefiLlama category Yield
+Rubicon,799,rubicon,Rubicon,DefiLlama category Dexs
+Rysk,parent#rysk-finance,rysk-v1,Rysk V1,DefiLlama category Options
+Sablier,parent#sablier-finance,sablier-flow; sablier-legacy; sablier-lockup,Sablier Flow; Sablier Legacy; Sablier Lockup,DefiLlama category Payments
+Safe,3320,safe,Safe,DefiLlama category Services
+SafePal,8104,safepal-card,SafePal Card,DefiLlama category Crypto Card Issuer
+Sanko Bridge,4796,sanko-bridge,Sanko Bridge,DefiLlama category Canonical Bridge
+Sanko.TV,3756,sanko-gamecorp,Sanko GameCorp,DefiLlama category SoFi
+Savvy,3169,savvy,Savvy,DefiLlama category CDP
+Securitize,parent#securitize,apollo-diversified-credit-securitize-fund; blackrock-buidl; blockchain-capital; hamilton-lane-senior-credit-opportunities-securitize-fund; mantle-index-four-fund; securitize-tokenized-aaa-clo-fund; vaneck-treasury-fund,Apollo Diversified Credit Securitize Fund; BlackRock BUIDL; Blockchain Capital; Hamilton Lane Senior Credit Opportunities Securitize Fund; Mantle Index Four Fund; Securitize Tokenized AAA CLO Fund; VanEck Treasury Fund,DefiLlama category RWA
+Seneca,4137,seneca,Seneca,DefiLlama category CDP
+ShapeShift,598,shapeshift,ShapeShift,DefiLlama category Dexs
+Sharpe AI,parent#sharpe-ai,sharpe-earn; sharpe-magnum; sharpe-perp-aggregator,Sharpe Earn; Sharpe Magnum; Sharpe Perp Aggregator,DefiLlama category Yield
+Sharwa.Finance,6876,sharwa.finance,Sharwa.Finance,DefiLlama category Derivatives
+Shell Protocol,133,shell-protocol,Shell Protocol,DefiLlama category Dexs
+Shift Protocol,6901,shift-protocol,Shift Protocol,DefiLlama category Onchain Capital Allocator
+SHPRD,4151,shprd,SHPRD,DefiLlama category Indexes
+Silo Finance,parent#silo-finance,silo-v1; silo-v2; silo-v3,Silo V1; Silo V2; Silo V3,DefiLlama category Lending
+Skate Chain,6246,skate-amm,Skate AMM,DefiLlama category Dexs
+SMARDEX,parent#smardex-ecosystem,smardex-amm; smardex-p2p-lending,SMARDEX AMM; SMARDEX P2P Lending,DefiLlama category Dexs
+Sociogram,3658,sociogram,Sociogram,DefiLlama category SoFi
+Socket,6097,socket-protocol,SOCKET Protocol,DefiLlama category Bridge Aggregator
+SODAX,8398,sodax,SODAX,DefiLlama category Bridge
+SOFA.org,4779,sofa.org,SOFA.org,DefiLlama category Options
+SolidLizard,parent#solidlizard,solidlizard-dex; solidlizard-lending,SolidLizard Dex; SolidLizard Lending,DefiLlama category Dexs
+Solidly,parent#solidly-labs,solidly-v3,Solidly V3,DefiLlama category Dexs
+Solv Protocol,parent#solv-protocol,solv-basis-trading; solv-vesting; solvbtc,Solv Basis Trading; Solv Vesting; SolvBTC,DefiLlama category Bridge
+Sommelier,2139,sommelier,Sommelier,DefiLlama category Onchain Capital Allocator
+Sosovalue,parent#sosovalue,sodex-bridge,SoDEX Bridge,DefiLlama category Bridge
+Spark,parent#spark,spark-liquidity-layer; spark-savings,Spark Liquidity Layer; Spark Savings,DefiLlama category Yield
+SpartaDex,3335,spartadex,SpartaDex,DefiLlama category Dexs
+Sperax,parent#sperax,sperax-demeter; sperax-demeter-v2; sperax-usd,Sperax Demeter; Sperax Demeter V2; Sperax USD,DefiLlama category Yield Aggregator
+Sphere,parent#sphere,dyson; preon-finance,Dyson; Preon Finance,DefiLlama category Liquidity Manager
+Spiko,4980,spiko,Spiko,DefiLlama category RWA
+Spool,parent#spool-protocol,yelay-v1,Yelay V1,DefiLlama category Yield Aggregator
+Stake DAO,parent#stake-dao,stake-dao-yield,Stake DAO Yield,DefiLlama category Yield
+Stargate,parent#stargate-finance,stargate-v1; stargate-v2,Stargate V1; Stargate V2,DefiLlama category Cross Chain Bridge
+Steakhouse Financial,6212,steakhouse-financial,Steakhouse Financial,DefiLlama category Risk Curators
+Steer Protocol,3043,steer-protocol,Steer Protocol,DefiLlama category Liquidity Manager
+Stella,3148,stella,Stella,DefiLlama category Leveraged Farming
+Stryke (formerly Dopex),parent#dopex,stryke-clamm; stryke-rfq; stryke-ssov,Stryke CLAMM; Stryke RFQ; Stryke SSOV,DefiLlama category Options
+Subsea,parent#subseaprotocol,opengdp-shared-security; risk-harbor,OpenGDP Shared Security; Risk Harbor,DefiLlama category Restaking
+Sudoswap,parent#sudoswap,sudoswap-v2,Sudoswap V2,DefiLlama category NFT Marketplace
+Summer.Fi,parent#summer.fi,lazy-summer-protocol; summer.fi-pro,Lazy Summer Protocol; Summer.fi Pro,DefiLlama category CDP Manager
+Sun,parent#sun,sunx-bridge,SunX Bridge,DefiLlama category Bridge
+Superfluid,693,superfluid,Superfluid,DefiLlama category Payments
+Superform,4448,superform,Superform,DefiLlama category Yield Aggregator
+SuperSwap,parent#superswap-ink,superswap-ink-bridge-aggregator; superswap-ink-dex-aggregator,SuperSwap Ink Bridge Aggregator; SuperSwap Ink DEX Aggregator,DefiLlama category DEX Aggregator
+Sushi,parent#sushi,sushi-bentobox; sushi-furo; sushi-kashi; sushi-trident; sushiswap; sushiswap-v3; sushiswap-v4,Sushi BentoBox; Sushi Furo; Sushi Kashi; Sushi Trident; SushiSwap; SushiSwap V3; SushiSwap V4,DefiLlama category Dexs
+Swaap,parent#swaap,swaap-earn; swaap-maker-v2,Swaap Earn; Swaap Maker V2,DefiLlama category Dexs
+Swapr,parent#swapr,swapr-v2,Swapr V2,DefiLlama category Dexs
+Sweep Protocol,3795,sweep,Sweep,DefiLlama category RWA
+Symbiosis,1594,symbiosis,Symbiosis,DefiLlama category Cross Chain Bridge
+SYMMIO,6783,symmio,SYMMIO,DefiLlama category Derivatives
+Synapse,parent#synapse,synapse-cross-chain-bridge,Synapse Cross Chain Bridge,DefiLlama category Cross Chain Bridge
+T3tris Finance,8068,t3tris-finance,T3tris Finance,DefiLlama category Onchain Capital Allocator
+Teahouse,parent#teahouse-finance,teahouse-managed; teahouse-permissionless,Teahouse Managed; Teahouse Permissionless,DefiLlama category Yield Aggregator
+Teller,2736,teller,Teller,DefiLlama category Lending
+Tender Finance,2382,tender-finance,Tender Finance,DefiLlama category Lending
+TermMax,4799,termmax,TermMax,DefiLlama category Lending
+The Graph,5010,the-graph,The Graph,DefiLlama category Developer Tools
+The Standard Protocol,3503,the-standard,The Standard,DefiLlama category CDP
+Theo,parent#theo,theo-network-thbill; theo-straddle-vaults,Theo Network thBill; Theo Straddle Vaults,DefiLlama category Basis Trading
+Timeswap,parent#timeswap,timeswap-v2,Timeswap V2,DefiLlama category Lending
+Tokensfarm,1669,tokensfarm,TokensFarm,DefiLlama category Yield
+Tornado Cash,148,tornado-cash,Tornado Cash,DefiLlama category Privacy
+Toros Finance,parent#dhedge,chamber-vaults; flat-money-v2; toros,Chamber Vaults; Flat Money V2; Toros,DefiLlama category Yield
+Trader Joe,parent#trader-joe,joe-dex; joe-v2; joe-v2.1; joe-v2.2,Joe DEX; Joe V2; Joe V2.1; Joe V2.2,DefiLlama category Dexs
+Trading Strategy,6276,tradingstrategy,TradingStrategy,DefiLlama category Onchain Capital Allocator
+TrueFi,166,truefi,TrueFi,DefiLlama category Uncollateralized Lending
+Trust Wallet,parent#trust-wallet,trust-wallet-perps; trust-wallet-wallet,Trust Wallet Perps; Trust Wallet Wallet,DefiLlama category Wallets
+TYMIO,4707,tymio,TYMIO,DefiLlama category Options
+Uncx Network,parent#uncx-network,uncx-network-v2; uncx-network-v3; uncx-network-v4; unicrypt-vesting-v2,UNCX Network V2; UNCX Network V3; UNCX Network V4; Unicrypt Vesting V2,DefiLlama category Token Locker
+Uniswap,parent#uniswap,uniswap-v2; uniswap-v3; uniswap-v4,Uniswap V2; Uniswap V3; Uniswap V4,DefiLlama category Dexs
+Unlock,6945,unlock-protocol,Unlock Protocol,DefiLlama category Payments
+USD.AI,6190,usd-ai,USD AI,DefiLlama category RWA
+USDC,parent#circle,circle-cctp; circle-gateway; circle-usdc; circle-usyc; usdcx,Circle CCTP; Circle Gateway; Circle USDC; Circle USYC; USDCx,DefiLlama category Cross Chain Bridge
+VaultCraft,1791,vaultcraft,VaultCraft,DefiLlama category Yield
+Vaultka,2531,vaultka,Vaultka,DefiLlama category Yield
+Veda,5825,veda,Veda,DefiLlama category Onchain Capital Allocator
+Vela Exchange,2548,vela-exchange,Vela Exchange,DefiLlama category Derivatives
+Velora (formerly ParaSwap),894,velora,Velora,DefiLlama category DEX Aggregator
+Venus Protocol,parent#venus-finance,venus-core-pool; venus-isolated-pools,Venus Core Pool; Venus Isolated Pools,DefiLlama category Lending
+Vfat,parent#vfat,vfat.io,vfat.io,DefiLlama category Yield Aggregator
+Vingt.io,5839,vingt.io,Vingt.io,DefiLlama category Indexes
+Volmex Finance,364,volmex,Volmex,DefiLlama category Yield
+WanBridge,2081,wan-bridge,Wan Bridge,DefiLlama category Bridge
+WardenSwap,392,wardenswap,WardenSwap,DefiLlama category Dexs
+WINR Games,3032,winr-protocol,WINR Protocol,DefiLlama category Prediction Market
+WisdomTree,6516,wisdomtree,WisdomTree,DefiLlama category RWA
+Wise Lending,parent#wise-lending,wise-lending-v2,Wise Lending V2,DefiLlama category Lending
+Wombat Exchange,1700,wombat-exchange,Wombat Exchange,DefiLlama category Dexs
+WOOFi,parent#woofi,woofi-earn; woofi-swap,WOOFi Earn; WOOFi Swap,DefiLlama category Yield
+Wormhole,1541,portal,Portal,DefiLlama category Bridge
+xWIN Finance,3231,xwin-finance,xWin Finance,DefiLlama category Indexes
+Y2K,parent#y2k-finance,y2k-v1; y2k-v2,Y2K V1; Y2K V2,DefiLlama category Derivatives
+yearn,parent#yearn,yearn-curating; yearn-finance,Yearn Curating; Yearn Finance,DefiLlama category Yield Aggregator
+Yield Protocol,876,yield-protocol,Yield Protocol,DefiLlama category Lending
+Yield Yak,parent#yield-yak,yield-yak-aggregator,Yield Yak Aggregator,DefiLlama category Yield Aggregator
+YieldBricks,6883,yieldbricks,YieldBricks,DefiLlama category RWA
+YieldFi,5588,yieldfi,YieldFi,DefiLlama category Yield Aggregator
+Yieldflow,parent#yieldflow,yieldflow-yield-farming; yieldflow-ytrade,YieldFlow Yield Farming; YieldFlow-YTrade,DefiLlama category Liquidity Manager
+YO Protocol,5915,yo-protocol,YO Protocol,DefiLlama category Yield Aggregator
+Zerion,parent#zerion,zerion-aggregator; zerion-perps; zerion-wallet,Zerion Aggregator; Zerion Perps; Zerion Wallet,DefiLlama category Wallets
+ZEROBASE,6265,zerobase-cedefi,ZEROBASE CeDeFi,DefiLlama category Basis Trading
+zkLink Nova,4335,zklink-nova,zkLink Nova,DefiLlama category Chain
+Zoo Finance,5762,zoo-finance,Zoo Finance,DefiLlama category Yield
+Zyberswap,parent#zyberswap,zyberswap-amm; zyberswap-stableswap; zyberswap-v3,ZyberSwap Stableswap; Zyberswap AMM; Zyberswap V3,DefiLlama category Dexs
+ZyFAI,6088,zyfai,ZyFAI,DefiLlama category AI Agents

@@ -33,6 +33,7 @@ import * as llamaBridgeAggregators from "./fetch/llama-bridge-aggregators";
 import * as llamaOpenInterest from "./fetch/llama-open-interest";
 import * as llamaOptions from "./fetch/llama-options";
 import * as llamaHacks from "./fetch/llama-hacks";
+import * as llamaChains from "./fetch/llama-chains";
 import * as llamaYields from "./fetch/llama-yields";
 import * as morphoVaults from "./fetch/morpho-vaults";
 import * as geckoVenues from "./fetch/geckoterminal-venues";
@@ -61,6 +62,7 @@ const LANES: Source[][] = [
     { id: "llama-options", run: llamaOptions.run },
     { id: "llama-hacks", run: llamaHacks.run },
     { id: "llama-yields", run: llamaYields.run },
+    { id: "llama-chains", run: llamaChains.run },
   ],
   // Token and NFT snapshots (the Blockscout key's limiter is shared with blockscout-keyed) and Morpho vaults.
   [

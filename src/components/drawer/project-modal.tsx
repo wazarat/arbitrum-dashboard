@@ -11,7 +11,7 @@ import { TierInfoTip } from "@/components/atlas/tier-info";
 import { OnchainLines } from "@/components/atlas/onchain-lines";
 import { tierLabel } from "@/lib/tier";
 import { blockAsOf, MetricCell, MetricTrio } from "@/components/atlas/sector-metric-rows";
-import { buildsOnRobinhoodChain, isPublisher, PUBLISHER_NOTE } from "@/lib/chain";
+import { buildsOnRobinhoodChain, isPublisher, PUBLISHER_NOTE, supplyNote } from "@/lib/chain";
 import { blockMetrics, isMeasured, LENDING_BRIEFS, LENDING_TRIO, type ResolvedMetric } from "@/lib/sector-metrics";
 import { HistoryChart } from "@/components/charts/history-chart";
 import { PeerSuggestions } from "@/components/compare/add-project";
@@ -202,6 +202,7 @@ function ProjectBody({ p, all, onOpen }: { p: Project; all: Project[]; onOpen: (
           </Field>
           <Field label="Status">{p.status}</Field>
           {isPublisher(p) && <p className="text-xs text-ink-300" data-testid="publisher-note">{PUBLISHER_NOTE}</p>}
+          {supplyNote(p) && <p className="text-xs text-ink-300" data-testid="supply-note">{supplyNote(p)}</p>}
           {unverifiedNote(p) && (
             <Field label="Unverified">
               <span className="text-ink-300">{unverifiedNote(p)}</span>

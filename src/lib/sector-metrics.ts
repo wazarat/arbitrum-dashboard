@@ -8,6 +8,7 @@
  * except the definitions of what each metric counts. Source names appear only in `info`.
  */
 import { isPublisher } from "./chain";
+import { TRACTION_RULES } from "./traction";
 import { daysBetween, type DateStr } from "./dates";
 import { fmtInt, fmtPct, fmtUsd, fmtUsdFull } from "./format";
 import type { MetricFlag, NumericMetricKey, Project } from "./types";
@@ -193,7 +194,7 @@ export const SECTOR_CONFIGS: SectorConfig[] = [
   // Fees from DefiLlama's SoFi and social listings rank the sector; holders are context only and never set a tier.
   measured("Social & Identity", ["fees"], "none", ["fees", "revenue", "holders", "tvl"]),
   // Measured for Orbit chain rows only; RaaS providers and the core network rows show facts and carry no tier.
-  measured("Orbit Chains & Rollup Infrastructure", ["orbitTvl"], "none", ["orbitTvl", "orbitActive", "fees", "revenue", "tvl"], { measuredFor: isOrbitChain, optional: ["fees", "revenue", "tvl"] }),
+  measured("Orbit Chains & Rollup Infrastructure", ["orbitTvl"], "tvl", ["orbitTvl", "orbitActive", "fees", "revenue", "tvl"], { measuredFor: isOrbitChain, optional: ["fees", "revenue", "tvl"] }),
   unmeasured("Infrastructure & Dev Tools", ["lockedValue", "vesting", "feesFact"]),
   unmeasured("Security, Risk & Compliance", ["auditedProjects", "feesFact"]),
   unmeasured("Data & Analytics", ["feesFact"]),
@@ -368,6 +369,7 @@ export const TIER_SLOT: Record<string, "tvl" | "volume"> = {
   openInterest: "tvl",
   vaultAssets: "tvl",
   bridgedDeposits: "tvl",
+  orbitTvl: "tvl",
   volume: "volume",
   aggVolume: "volume",
   bridgeAggVolume: "volume",
@@ -382,6 +384,8 @@ export function headlineTierInput(p: Project): { tvl: number | null; volume: num
   const cfg = sectorConfig(p.sector);
   const h = isMeasured(p) && cfg.tierKind !== "none" ? headlineOf(p) : null;
   const slot = h && !ONCHAIN_TIERED.has(h.def.id) ? TIER_SLOT[h.def.id] : undefined;
-  const v = h && slot ? h.value : null;
+  let v = h && slot ? h.value : null;
+  // An Orbit chain below the traction rule's $1M reads Tracked, negligible rather than a tier (src/lib/traction.ts).
+  if (h?.def.id === "orbitTvl" && v !== null && v < TRACTION_RULES.orbitTvl) v = 0;
   return { tvl: slot === "tvl" ? v : null, volume: slot === "volume" ? v : null };
 }

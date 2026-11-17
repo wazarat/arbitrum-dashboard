@@ -46,3 +46,13 @@ export const PUBLISHER_NOTE = "CanHav Research is the publisher of this atlas.";
 
 /** Orbit chains and Open House teams that build on Robinhood Chain name it in Native Chain Detail. */
 export const buildsOnRobinhoodChain = (p: { chainDetail: string | null }) => /robinhood chain/i.test(p.chainDetail ?? "");
+
+/**
+ * Rows whose supply on Arbitrum is counted on another row. DefiLlama lists Tether's Arbitrum supply as USDT (id 1),
+ * which is the USDT0 token, so the USDT0 row carries it and Tether shows this note instead (owner decision, Nov 17 2026).
+ */
+export const SUPPLY_COUNTED_ON: Record<string, string> = { Tether: "USDT0" };
+export function supplyNote(p: { name: string }): string | null {
+  const other = SUPPLY_COUNTED_ON[p.name];
+  return other ? `Tether's supply on Arbitrum is the ${other} token, so it is counted on the ${other} row.` : null;
+}

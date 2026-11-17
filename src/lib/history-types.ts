@@ -28,6 +28,7 @@ export const SOURCE_IDS = [
   "llama-yields",
   "morpho-vaults",
   "geckoterminal-venues",
+  "llama-chains",
 ] as const;
 export type SourceId = (typeof SOURCE_IDS)[number];
 

@@ -1,0 +1,12 @@
+Project,DefiLlama chain,Notes
+ApeChain,ApeChain,DefiLlama /v2/chains name (chainId 33139)
+EDU Chain,EDU Chain,DefiLlama /v2/chains name (chainId 41923)
+Eventum,Eventum,DefiLlama /v2/chains name
+Gravity Chain,Gravity by Galxe,DefiLlama /v2/chains name (chainId 1625)
+MindChain,Mind Network,DefiLlama /v2/chains name (chainId 228)
+Plume Network,Plume Mainnet,DefiLlama /v2/chains name (chainId 98866); the separate "Plume" entry is the retired chain at $0
+Reya Chain,ReyaChain,DefiLlama /v2/chains name (chainId 1729)
+Robinhood Chain,Robinhood Chain,DefiLlama /v2/chains name (chainId 4663)
+SX Network,SX Rollup,DefiLlama /v2/chains name; SX Network moved to its Arbitrum Orbit rollup
+Xai,Xai,DefiLlama /v2/chains name
+zkLink Nova,zkLink Nova,DefiLlama /v2/chains name (chainId 810180)

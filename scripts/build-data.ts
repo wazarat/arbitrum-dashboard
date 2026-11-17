@@ -25,6 +25,7 @@ import { dateFromName, findFile, findFileOrNull, readCsv, readCsvOrEmpty } from 
 import { DATA, GATED, HISTORY, OUT } from "./lib/paths";
 import { CHAIN as CHAIN_CONFIG } from "../src/lib/chain";
 import { readJson } from "./lib/store";
+import { parseOrbitMap } from "./fetch/llama-chains";
 import { reversedDrops } from "../src/lib/series-gaps";
 import { computeOnchain, onchainSupply, parseStablecoinMap, stablecoinSummary, type OnchainStore } from "../src/lib/onchain";
 import { TRACTION_RULES } from "../src/lib/traction";
@@ -230,6 +231,17 @@ function main() {
   const tvlOfSlug = new Map((history?.protocols ?? []).map((p) => [p.slug, p.tvl]));
   const sources = end ? loadSources(end) : null;
   const seedCats = seedCategories(readCsv(findFile(`${CHAIN_CONFIG.filePrefix}-defillama-map-`, ".csv")));
+  // Orbit chain TVL from DefiLlama's chain list (scripts/fetch/llama-chains.ts); it sits on its own chain, never in Arbitrum's totals.
+  const orbitStore = readJson<Record<string, Series>>(path.join(HISTORY, "defillama", "orbit-chains.json"), {});
+  const orbitChainOf = new Map(parseOrbitMap(readCsvOrEmpty(path.join(DATA, "orbit-chain-map.csv"))).map((r) => [r.project, r.chain]));
+  const orbitTvlOf = (name: string, end: DateStr) => {
+    const s = orbitStore[orbitChainOf.get(name) ?? ""];
+    if (!s?.length) return null;
+    // A level: the chain's TVL on the window end, or the closest reading within 3 days before it.
+    const v = valueAt(s, end);
+    const asOf = s.filter(([d]) => d <= end).at(-1)?.[0] ?? null;
+    return v === null || asOf === null ? null : { v, asOf };
+  };
   const projects: Project[] = snapshotProjects.map((p) => {
     const contracts = contractsOf.get(p.name) ?? [];
     if (!history || !end) {
@@ -265,6 +277,7 @@ function main() {
         sources as SourceStore,
         end,
       ),
+      ...(orbitTvlOf(p.name, end) ? { orbitTvl: orbitTvlOf(p.name, end)! } : {}),
     };
     const metricFlags = computeMetricFlags({ ...withLive, counted }, slugs, (s) => tvlOfSlug.get(s) ?? 0, history.sector.exclusionOf);
     const joined: Project = { ...withLive, tier: onchainTiered, contracts, counted, biz, onchain, sectorMetrics, metricFlags };

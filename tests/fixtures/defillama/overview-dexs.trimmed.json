@@ -1,0 +1,75 @@
+{
+ "chain": "Arbitrum",
+ "totalDataChart": [
+  [
+   1794528000,
+   275806068.57000005
+  ],
+  [
+   1794614400,
+   285731735.71999997
+  ],
+  [
+   1794700800,
+   308361368.25
+  ],
+  [
+   1794787200,
+   245411863.25
+  ],
+  [
+   1794873600,
+   158939778.57999998
+  ]
+ ],
+ "totalDataChartBreakdown": [
+  [
+   1794700800,
+   {
+    "Uniswap V3": 162291436,
+    "Uniswap V4": 29173033,
+    "Aero Slipstream": 32735497
+   }
+  ],
+  [
+   1794787200,
+   {
+    "Uniswap V3": 72083679,
+    "Uniswap V4": 18579901,
+    "Aero Slipstream": 26133264
+   }
+  ]
+ ],
+ "protocols": [
+  {
+   "name": "Uniswap V3",
+   "displayName": "Uniswap V3",
+   "defillamaId": "2198",
+   "module": "uniswap-v3",
+   "parentProtocol": "parent#uniswap",
+   "category": "Dexs",
+   "slug": "uniswap-v3",
+   "total30d": 3277143373
+  },
+  {
+   "name": "Uniswap V4",
+   "displayName": "Uniswap V4",
+   "defillamaId": "5690",
+   "module": "uniswap-v4",
+   "parentProtocol": "parent#uniswap",
+   "category": "Dexs",
+   "slug": "uniswap-v4",
+   "total30d": 687819574
+  },
+  {
+   "name": "Aero Slipstream",
+   "displayName": "Aero Slipstream",
+   "defillamaId": "8691",
+   "module": "aero-lite",
+   "parentProtocol": "parent#aero-protocol",
+   "category": "Dexs",
+   "slug": "aero-slipstream",
+   "total30d": 563031541.78
+  }
+ ]
+}

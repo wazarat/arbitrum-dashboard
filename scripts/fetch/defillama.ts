@@ -49,7 +49,7 @@ export function parseProtocols(json: RawProtocol[]): LlamaProtocolSnap[] {
     .filter((p) => (p.chains ?? []).includes(CHAIN) || (p.chainTvls && CHAIN in p.chainTvls))
     .map((p) => {
       const addr = (p.address ?? "").toLowerCase();
-      const m = addr.match(/^base:(0x[0-9a-f]{40})$/);
+      const m = addr.match(new RegExp(`^${CHAIN_OV}:(0x[0-9a-f]{40})$`));
       return {
         slug: p.slug,
         name: p.name,

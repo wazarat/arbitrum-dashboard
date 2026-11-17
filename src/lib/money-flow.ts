@@ -30,6 +30,23 @@ export function roundFlowType(r: FlowRound): string | null {
   return r.related ? ROUND_FLOW_TYPE : null;
 }
 
+/**
+ * An event's place in the money flow: the Arbitrum program it names, so Open House awards, DRIP, the Mentorship
+ * Program and Arbitrum Gaming Ventures keep their own filter whether the money is recorded as an event or a round.
+ * Other events keep their event type (Program, Funding, Incentive).
+ */
+export function eventFlowType(e: Pick<EcosystemEvent, "type" | "title" | "projects">): string {
+  const names = e.projects.map((n) => n.trim().toLowerCase());
+  const title = e.title.toLowerCase();
+  if (e.type === "Funding") return e.type;
+  if (names.includes("arbitrum open house") || /open house|founder house/.test(title)) return "Open House";
+  if (/\bdrip\b/.test(title)) return "DRIP";
+  if (/mentorship/.test(title)) return "Mentorship Program";
+  if (names.includes("arbitrum gaming ventures")) return "Arbitrum Gaming Ventures";
+  if (names.includes("entropy advisors") && /dao service/.test(title)) return "DAO service contract";
+  return e.type;
+}
+
 /** The Open House city named on a round ("Arbitrum Founder House London" gives London), or null. */
 export function openHouseCity(r: Pick<Round, "leadInvestors" | "otherInvestors">): string | null {
   for (const n of [...r.leadInvestors, ...r.otherInvestors]) {
@@ -64,7 +81,7 @@ const month = (d: string | null) => (d ? d.slice(0, 7) : null);
 export function moneyFlow(events: EcosystemEvent[], rounds: Round[]): FlowItem[] {
   const ev = events.filter((e) => (FLOW_EVENT_TYPES as readonly string[]).includes(e.type));
   const covered = new Set(ev.flatMap((e) => e.projectIds.map((id) => `${id}|${month(e.date)}`)));
-  const items: FlowItem[] = ev.map((e) => ({ id: `event-${e.id}`, type: e.type, date: e.date || null, title: e.title, amount: e.amount, amountNote: e.amountNote, detail: e.detail, eventId: e.id }));
+  const items: FlowItem[] = ev.map((e) => ({ id: `event-${e.id}`, type: eventFlowType(e), date: e.date || null, title: e.title, amount: e.amount, amountNote: e.amountNote, detail: e.detail, eventId: e.id }));
   for (const r of rounds) {
     const type = roundFlowType(r);
     if (!type) continue;
@@ -92,9 +109,8 @@ export function moneyFlow(events: EcosystemEvent[], rounds: Round[]): FlowItem[]
 export function flowTypes(items: FlowItem[]): Array<{ type: string; count: number }> {
   const counts = new Map<string, number>();
   for (const i of items) counts.set(i.type, (counts.get(i.type) ?? 0) + 1);
-  // Event types always show; round types only when some round has them.
-  const roundTypes = ([...ROUND_FLOW_TYPES, ROUND_FLOW_TYPE] as string[]).filter((t) => counts.has(t));
-  const known = [...FLOW_EVENT_TYPES, ...roundTypes] as string[];
+  // A type shows only when some item has it, so the filter never offers an empty option.
+  const known = ([...FLOW_EVENT_TYPES, ...ROUND_FLOW_TYPES, ROUND_FLOW_TYPE] as string[]).filter((t) => counts.has(t));
   const others = Array.from(counts.keys()).filter((t) => !known.includes(t)).sort();
   return [{ type: FLOW_ALL, count: items.length }, ...[...known, ...others].map((t) => ({ type: t, count: counts.get(t) ?? 0 }))];
 }

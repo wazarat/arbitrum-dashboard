@@ -1,0 +1,560 @@
+[
+ {
+  "id": "3365",
+  "name": "GMX EVM",
+  "previousNames": [
+   "GMX V2 Perps"
+  ],
+  "address": "arbitrum:0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
+  "symbol": "GMX",
+  "url": "https://gmx.io",
+  "referralUrl": "https://app.gmx.io/#/trade/?ref=llamao",
+  "description": "GMX is a decentralized spot and perpetual exchange that supports low swap fees and zero price impact trades. Trading is supported by a unique multi-asset pool that earns liquidity providers fees from market making, swap fees, leverage trading (spreads, funding fees & liquidations) and asset rebalancing.",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/gmx-evm",
+  "audits": "2",
+  "gecko_id": null,
+  "cmcId": null,
+  "category": "Derivatives",
+  "chains": [
+   "Arbitrum",
+   "Avalanche",
+   "MegaETH",
+   "Botanix"
+  ],
+  "module": "gmx-v2/index.js",
+  "twitter": "GMX_IO",
+  "oraclesBreakdown": [
+   {
+    "name": "Chainlink",
+    "type": "Primary",
+    "proof": [
+     "https://docs.gmx.io/docs/intro",
+     "https://docs.gmx.io/docs/trading/order-types/#oracle-prices-minprice-and-maxprice",
+     "https://docs.gmx.io/docs/trading/liquidations/#trading-risks"
+    ]
+   }
+  ],
+  "parentProtocol": "parent#gmx",
+  "audit_links": [
+   "https://github.com/gmx-io/gmx-synthetics/tree/main/audits",
+   "https://github.com/gmx-io/gmx-synthetics/blob/HEAD/audits/guardian/2026-06-16_GMX_V2_Review_Report.pdf"
+  ],
+  "listedAt": 1691622170,
+  "dimensions": {
+   "fees": "gmx-v2",
+   "derivatives": "gmx-v2-gmx-v2-trade",
+   "open-interest": "gmx-v2-gmx-v2-trade",
+   "active-users": "gmx-v2"
+  },
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/registries/gmx.js",
+  "slug": "gmx-evm",
+  "tvl": 188191323.7494164,
+  "chainTvls": {
+   "Arbitrum": 181269099.20288214
+  },
+  "change_1h": 0.2605365474963861,
+  "change_1d": 0.5838455218816421,
+  "change_7d": -2.679167244129772,
+  "tokenBreakdowns": {},
+  "mcap": null,
+  "parentProtocolSlug": "gmx"
+ },
+ {
+  "id": "8691",
+  "name": "Aero Slipstream",
+  "previousNames": [
+   "Aero Lite"
+  ],
+  "address": "base:0x3f5bF3EdAc59d650D8fDf9657a71F2f904A3a4Ee",
+  "symbol": "AERO",
+  "url": "https://aero.xyz/",
+  "description": "Decentralized exchange offering concentrated-liquidity pools across multiple EVM networks.",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/aero-slipstream",
+  "audits": "0",
+  "gecko_id": null,
+  "cmcId": null,
+  "tags": [
+   "CLMM"
+  ],
+  "forkedFromIds": [
+   "2198"
+  ],
+  "chains": [
+   "Base",
+   "Ethereum",
+   "Optimism",
+   "Arbitrum",
+   "Robinhood Chain",
+   "Elysium Kinetiq",
+   "Arc",
+   "Ink"
+  ],
+  "module": "aero-lite/index.js",
+  "twitter": "aeroxyz",
+  "parentProtocol": "parent#aero-protocol",
+  "listedAt": 1789765047,
+  "dimensions": {
+   "fees": "aero-lite",
+   "dexs": "aero-lite"
+  },
+  "category": "Dexs",
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/aero-lite/index.js",
+  "slug": "aero-slipstream",
+  "tvl": 116900102.58783701,
+  "chainTvls": {
+   "Arbitrum": 4257650.627664495,
+   "Base": 87674555.47118104,
+   "Ethereum": 11776117.106943099
+  },
+  "change_1h": -2.5013504470575896,
+  "change_1d": 0.5600150052551811,
+  "change_7d": -3.9167704031027597,
+  "tokenBreakdowns": {},
+  "mcap": null,
+  "parentProtocolSlug": "aero"
+ },
+ {
+  "id": "2198",
+  "name": "Uniswap V3",
+  "address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+  "symbol": "UNI",
+  "url": "https://app.uniswap.org/",
+  "description": "A fully decentralized protocol for automated liquidity provision on Ethereum. V2",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/uniswap-v3",
+  "audits": "2",
+  "gecko_id": null,
+  "cmcId": null,
+  "tags": [
+   "CLMM"
+  ],
+  "chains": [
+   "Ethereum",
+   "Base",
+   "Arbitrum",
+   "Robinhood Chain",
+   "Binance",
+   "X Layer",
+   "Polygon",
+   "Optimism",
+   "Arc",
+   "Unichain",
+   "Plasma",
+   "Avalanche",
+   "Ink",
+   "Celo",
+   "xDai",
+   "Monad",
+   "RSK",
+   "World Chain",
+   "0G",
+   "Etherlink",
+   "Boba",
+   "Mantle",
+   "zkSync Era",
+   "Sei",
+   "Filecoin",
+   "XDC",
+   "Telos",
+   "BOB",
+   "Hemi",
+   "Elysium Kinetiq",
+   "Linea",
+   "Scroll",
+   "Redbelly",
+   "Sonic",
+   "Taiko",
+   "MegaETH",
+   "Goat",
+   "Manta",
+   "Tempo",
+   "LightLink",
+   "Nibiru",
+   "Blast",
+   "Lisk",
+   "Saga",
+   "Lens"
+  ],
+  "module": "uniswap/index.js",
+  "twitter": "Uniswap",
+  "audit_links": [
+   "https://github.com/Uniswap/uniswap-v3-core/tree/main/audits",
+   "https://github.com/Uniswap/uniswap-v3-periphery/tree/main/audits"
+  ],
+  "listedAt": 1666191475,
+  "parentProtocol": "parent#uniswap",
+  "dimensions": {
+   "fees": {
+    "genuineSpikes": [
+     [
+      "2020-10-26",
+      "-"
+     ],
+     [
+      "2022-09-01",
+      "-"
+     ],
+     [
+      "2022-10-11",
+      "-"
+     ],
+     [
+      "2022-12-10",
+      "-"
+     ],
+     [
+      "2024-08-05",
+      "-"
+     ],
+     [
+      "2024-09-06",
+      "-"
+     ]
+    ],
+    "adapter": "uniswap-v3"
+   },
+   "dexs": {
+    "genuineSpikes": [
+     [
+      "2020-10-26",
+      "-"
+     ],
+     [
+      "2022-09-01",
+      "-"
+     ],
+     [
+      "2022-10-11",
+      "-"
+     ],
+     [
+      "2022-12-10",
+      "-"
+     ],
+     [
+      "2024-08-05",
+      "-"
+     ],
+     [
+      "2024-09-06",
+      "-"
+     ]
+    ],
+    "adapter": "uniswap-v3"
+   }
+  },
+  "category": "Dexs",
+  "methodology": "Counts the tokens locked on AMM pools, pulling the data from the 'ianlapham/uniswapv2' subgraph",
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/uniswap/index.js",
+  "hallmarks": [
+   [
+    1588550400,
+    "UNI V2 Launch"
+   ],
+   [
+    1598400000,
+    "SushiSwap launch"
+   ],
+   [
+    1599523200,
+    "SushiSwap migration"
+   ],
+   [
+    1600214400,
+    "LM starts"
+   ],
+   [
+    1605571200,
+    "LM ends"
+   ],
+   [
+    1617321600,
+    "FEI launch"
+   ],
+   [
+    1620086400,
+    "UNI V3 Launch"
+   ]
+  ],
+  "slug": "uniswap-v3",
+  "tvl": 1298911214.2757378,
+  "chainTvls": {
+   "Arbitrum": 95726721.95106426,
+   "Base": 277441028.99501574,
+   "Ethereum": 700540914.0069585
+  },
+  "change_1h": -1.111170291620482,
+  "change_1d": 0.8344530742023153,
+  "change_7d": -10.547323175002987,
+  "tokenBreakdowns": {},
+  "mcap": null,
+  "parentProtocolSlug": "uniswap"
+ },
+ {
+  "id": "4025",
+  "name": "Morpho Blue",
+  "previousNames": [
+   "Morpho V1"
+  ],
+  "address": "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
+  "symbol": "MORPHO",
+  "url": "https://app.morpho.org",
+  "description": "Morpho Blue is a trustless and efficient lending primitive with permissionless market creation",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/morpho-blue",
+  "audits": "2",
+  "gecko_id": null,
+  "cmcId": null,
+  "category": "Lending",
+  "chains": [
+   "Ethereum",
+   "Base",
+   "Robinhood Chain",
+   "Arc",
+   "Arbitrum",
+   "Monad",
+   "Hyperliquid L1",
+   "Pharos",
+   "Tempo",
+   "Stable",
+   "Flare",
+   "World Chain",
+   "Katana",
+   "Citrea",
+   "Etherlink",
+   "Optimism",
+   "Morph",
+   "Polygon",
+   "Plume Mainnet",
+   "MegaETH",
+   "Sei",
+   "Unichain",
+   "XDC",
+   "Celo",
+   "TAC",
+   "Klaytn",
+   "Abstract",
+   "Soneium",
+   "Avalanche",
+   "Sonic",
+   "RISE",
+   "Binance",
+   "0G",
+   "Ink",
+   "Lisk",
+   "xDai",
+   "Linea",
+   "Fraxtal",
+   "Scroll",
+   "Mode",
+   "Corn",
+   "Hemi",
+   "Zircuit",
+   "Bitlayer",
+   "Botanix"
+  ],
+  "module": "morpho-blue/index.js",
+  "twitter": "Morpho",
+  "audit_links": [
+   "https://github.com/morpho-org/morpho-blue/blob/main/audits/2023-11-13-morpho-blue-cantina-managed-review.pdf"
+  ],
+  "parentProtocol": "parent#morpho",
+  "listedAt": 1705261273,
+  "dimensions": {
+   "fees": "morpho",
+   "liquidations": {
+    "adapter": "morpho",
+    "genuineSpikes": [
+     [
+      "2026-08-25",
+      "Oracle manipulation in PT-reUsd market"
+     ]
+    ]
+   }
+  },
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/morpho-blue/index.js",
+  "slug": "morpho-blue",
+  "tvl": 9983696323.087055,
+  "chainTvls": {
+   "Arbitrum": 194000069.08968237,
+   "Arbitrum-borrowed": 141130132.9050557,
+   "Base": 3812978243.9430704,
+   "Ethereum": 4468732471.898993
+  },
+  "change_1h": -0.8408006220293913,
+  "change_1d": -0.012849097161861778,
+  "change_7d": -7.995529698333726,
+  "tokenBreakdowns": {},
+  "mcap": null,
+  "parentProtocolSlug": "morpho"
+ },
+ {
+  "id": "182",
+  "name": "Lido",
+  "address": "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+  "symbol": "LDO",
+  "url": "https://lido.fi/",
+  "referralUrl": "https://stake.lido.fi/?ref=0x08a3c2A819E3de7ACa384c798269B3Ce1CD0e437",
+  "description": "Liquid staking for Ethereum and Polygon. Daily staking rewards, no lock ups.",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/lido",
+  "audits": "2",
+  "gecko_id": "lido-dao",
+  "cmcId": "8000",
+  "category": "Liquid Staking",
+  "chains": [
+   "Ethereum",
+   "Solana",
+   "Terra",
+   "Moonriver",
+   "Moonbeam"
+  ],
+  "module": "lido/index.js",
+  "treasury": "lido.js",
+  "twitter": "LidoFinance",
+  "audit_links": [
+   "https://github.com/lidofinance/audits"
+  ],
+  "openSource": true,
+  "governanceID": [
+   "snapshot:lido-snapshot.eth"
+  ],
+  "github": [
+   "lidofinance"
+  ],
+  "dimensions": {
+   "fees": {
+    "adapter": "lido",
+    "genuineSpikes": [
+     [
+      "2026-10-30",
+      "MEV following the Binance hack"
+     ]
+    ]
+   }
+  },
+  "methodology": "Staked tokens are counted as TVL based on the chain that they are staked on and where the liquidity tokens are issued, stMATIC is counted as Ethereum TVL since MATIC is staked in Ethereum and the liquidity token is also issued on Ethereum.",
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/lido/index.js",
+  "hallmarks": [
+   [
+    1610496000,
+    "Start of incentives for curve pool"
+   ],
+   [
+    1651881600,
+    "UST depeg"
+   ],
+   [
+    1654819200,
+    "stETH depeg"
+   ],
+   [
+    1667865600,
+    "FTX collapse"
+   ],
+   [
+    1684108800,
+    "ETH Withdrawal Activation"
+   ]
+  ],
+  "slug": "lido",
+  "tvl": 17332277459.3387,
+  "chainTvls": {
+   "Ethereum": 17328573836.704914
+  },
+  "change_1h": -1.3087595711662203,
+  "change_1d": -2.4771019042381397,
+  "change_7d": -11.745390996420795,
+  "tokenBreakdowns": {},
+  "mcap": 224545326.5605725
+ },
+ {
+  "id": "2275",
+  "name": "Bitfinex",
+  "address": null,
+  "symbol": "-",
+  "url": "https://www.bitfinex.com",
+  "description": "Bitfinex facilitates a graphical trading experience with advanced charting functionality that allows traders to visualise orders, positions and price alerts",
+  "chain": "Multi-Chain",
+  "logo": "https://icons.llamao.fi/icons/protocols/bitfinex",
+  "audits": "0",
+  "gecko_id": null,
+  "cmcId": null,
+  "category": "CEX",
+  "chains": [
+   "Bitcoin",
+   "Ethereum",
+   "Tron",
+   "Solana",
+   "Avalanche",
+   "Litecoin",
+   "Near",
+   "Tezos",
+   "Polkadot",
+   "Polygon",
+   "Algorand",
+   "EOS",
+   "Cosmos",
+   "Aptos",
+   "Elrond",
+   "Cardano",
+   "EthereumClassic",
+   "Fantom",
+   "Zilliqa",
+   "Doge"
+  ],
+  "module": "bitfinex/index.js",
+  "twitter": "bitfinex",
+  "listedAt": 1668201923,
+  "misrepresentedTokens": false,
+  "tvlCodePath": "https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/bitfinex/index.js",
+  "slug": "bitfinex",
+  "tvl": 11982619552.73513,
+  "chainTvls": {
+   "Ethereum": 1312356633.7923748
+  },
+  "change_1h": -0.5392665958471383,
+  "change_1d": 0.27792587976081506,
+  "change_7d": -14.598532997595015,
+  "tokenBreakdowns": {},
+  "mcap": null
+ },
+ {
+  "id": "5446",
+  "name": "clanker",
+  "address": null,
+  "symbol": "-",
+  "url": "https://www.clanker.world/",
+  "description": "AI agent designed to automatically deploy tokens, specifically focusing on creating meme tokens on the Base",
+  "logo": "https://icons.llamao.fi/icons/protocols/clanker",
+  "audits": "0",
+  "gecko_id": null,
+  "cmcId": null,
+  "category": "Launchpad",
+  "chains": [],
+  "module": "dummy.js",
+  "twitter": "_proxystudio",
+  "parentProtocol": "parent#farcaster",
+  "dimensions": {
+   "fees": "clanker"
+  },
+  "misrepresentedTokens": false,
+  "tvlCodePath": null,
+  "slug": "clanker",
+  "tvl": null,
+  "chainTvls": {},
+  "change_1h": null,
+  "change_1d": null,
+  "change_7d": null,
+  "tokenBreakdowns": {},
+  "mcap": null,
+  "parentProtocolSlug": "farcaster"
+ }
+]

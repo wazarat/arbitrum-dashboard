@@ -1,0 +1,101 @@
+{
+ "data": {
+  "markets": {
+   "items": [
+    {
+     "marketId": "0xfdb8221edcae73f73485d55c30e706906114bc2ff4634870c5c57e8fb83eae6a",
+     "listed": false,
+     "loanAsset": {
+      "symbol": "USDC"
+     },
+     "collateralAsset": {
+      "symbol": "K"
+     },
+     "state": {
+      "supplyAssetsUsd": 33017633340.672855,
+      "borrowAssetsUsd": 33017633340.672855,
+      "collateralAssetsUsd": null,
+      "utilization": 1
+     },
+     "warnings": [
+      {
+       "type": "bad_debt_unrealized",
+       "level": "RED"
+      },
+      {
+       "type": "not_whitelisted",
+       "level": "YELLOW"
+      },
+      {
+       "type": "unrecognized_collateral_asset",
+       "level": "YELLOW"
+      }
+     ]
+    },
+    {
+     "marketId": "0x33e0c8ab132390822b07e5dc95033cf250c963153320b7ffca73220664da2ea0",
+     "listed": true,
+     "loanAsset": {
+      "symbol": "USDC"
+     },
+     "collateralAsset": {
+      "symbol": "wstETH"
+     },
+     "state": {
+      "supplyAssetsUsd": 920309.6986927902,
+      "borrowAssetsUsd": 840477.2864581599,
+      "collateralAssetsUsd": 1663697.5301376425,
+      "utilization": 0.9132548398131364
+     },
+     "warnings": []
+    },
+    {
+     "marketId": "0xff608e5881ccba3859006b3c01e377314384c3d661d684c3e8b6354146e62155",
+     "listed": false,
+     "loanAsset": {
+      "symbol": "USDT0"
+     },
+     "collateralAsset": {
+      "symbol": "PT-syrupUSDC-29JAN2026"
+     },
+     "state": {
+      "supplyAssetsUsd": 60.96398092485188,
+      "borrowAssetsUsd": 55.04388060415518,
+      "collateralAssetsUsd": null,
+      "utilization": 0.9028918349673686
+     },
+     "warnings": [
+      {
+       "type": "not_whitelisted",
+       "level": "YELLOW"
+      }
+     ]
+    },
+    {
+     "marketId": "0xfe1d7da2fbde85b1fee120c88df3e6b55164a2442dab97486d3d4f719a5ff1fb",
+     "listed": false,
+     "loanAsset": {
+      "symbol": "UNKNOWN"
+     },
+     "collateralAsset": null,
+     "state": {
+      "supplyAssetsUsd": null,
+      "borrowAssetsUsd": null,
+      "collateralAssetsUsd": null,
+      "utilization": 0
+     },
+     "warnings": [
+      {
+       "type": "not_whitelisted",
+       "level": "YELLOW"
+      },
+      {
+       "type": "unrecognized_loan_asset",
+       "level": "YELLOW"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "name": "Aave",
+ "chainTvls": {
+  "Arbitrum": {
+   "tvl": [
+    {
+     "date": 1794182400,
+     "totalLiquidityUSD": 481200500
+    },
+    {
+     "date": 1794268800,
+     "totalLiquidityUSD": 481523742
+    },
+    {
+     "date": 1794355200,
+     "totalLiquidityUSD": 474668260
+    },
+    {
+     "date": 1794441600,
+     "totalLiquidityUSD": 477365100
+    },
+    {
+     "date": 1794528000,
+     "totalLiquidityUSD": 472684396
+    },
+    {
+     "date": 1794614400,
+     "totalLiquidityUSD": 459120052
+    },
+    {
+     "date": 1794700800,
+     "totalLiquidityUSD": 426899970
+    },
+    {
+     "date": 1794787200,
+     "totalLiquidityUSD": 439418765
+    },
+    {
+     "date": 1794873600,
+     "totalLiquidityUSD": 411822003
+    },
+    {
+     "date": 1794932459,
+     "totalLiquidityUSD": 404589631
+    }
+   ]
+  },
+  "Arbitrum-borrowed": {
+   "tvl": [
+    {
+     "date": 1794787200,
+     "totalLiquidityUSD": 316880799
+    },
+    {
+     "date": 1794873600,
+     "totalLiquidityUSD": 314947998
+    },
+    {
+     "date": 1794932459,
+     "totalLiquidityUSD": 309860735
+    }
+   ]
+  },
+  "Ethereum": {
+   "tvl": [
+    {
+     "date": 1794787200,
+     "totalLiquidityUSD": 12451255267
+    },
+    {
+     "date": 1794873600,
+     "totalLiquidityUSD": 12476796268
+    },
+    {
+     "date": 1794932459,
+     "totalLiquidityUSD": 12298133874
+    }
+   ]
+  }
+ }
+}

@@ -1,6 +1,7 @@
 /**
- * Chain-level risk checklist for the Security page, from the Base project page on ETHBEAT
- * (formerly L2BEAT, which now redirects there) and incident reports, each opened on Nov 17 2026.
+ * Chain-level risk checklist for the Security page, for Arbitrum One, from ETHBEAT (formerly L2BEAT,
+ * which now redirects there), Offchain Labs and Arbitrum docs, the Arbitrum status page and incident
+ * reports, each opened on Nov 17 2026.
  * Levels: red = material risk today, amber = partial mitigation or open question,
  * green = mitigated or positive. Status is plain text; colour only marks the status word.
  */
@@ -17,67 +18,99 @@ export interface ChainRiskItem {
 
 export const chainRisk: ChainRiskItem[] = [
   {
-    id: "stage",
-    label: "Stage 1 rollup on ETHBEAT",
-    level: "amber",
-    detail:
-      "ETHBEAT, formerly L2BEAT, rates Base Stage 1 with all Stage 1 requirements met but only 1 of 3 Stage 2 requirements, because upgrades unrelated to provable bugs give less than 30 days to exit and Security Council powers are not limited to provable bugs.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "stage",
+    "label": "Stage 1 rollup with permissionless BoLD validation",
+    "level": "amber",
+    "detail": "ETHBEAT, formerly L2BEAT, rates Arbitrum One Stage 1. BoLD, deployed in Feb 2025, lets anyone submit fraud proofs and the chain passes the walkaway test, but it misses Stage 2 because upgrades unrelated to provable bugs give less than 30 days to exit and Security Council actions are not limited to provable bugs.",
+    "sourceLabel": "ETHBEAT Arbitrum One project page",
+    "sourceUrl": "https://ethbeat.org/scaling/projects/arbitrum"
   },
   {
-    id: "proofs",
-    label: "TEE and ZK multiproof system",
-    level: "amber",
-    detail:
-      "Since Azul, state proposals can be backed by an AWS Nitro TEE attestation and an SP1 ZK proof, and anyone with a valid ZK proof can challenge a TEE only proposal, but the Coinbase run Coordinator Multisig controls the TEE prover allowlist and ETHBEAT marks the program hashes as not verified.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "council",
+    "label": "Security Council can act instantly in an emergency",
+    "level": "red",
+    "detail": "The 12 member Security Council can act with 9 of 12 signatures with no delay and no exit window, with direct access to admin and upgrade functions on all contracts. It also holds canceller rights on both timelocks.",
+    "sourceLabel": "ETHBEAT Arbitrum One project page",
+    "sourceUrl": "https://ethbeat.org/scaling/projects/arbitrum"
   },
   {
-    id: "upgrades",
-    label: "Instant upgrades by a 2 of 2 multisig",
-    level: "red",
-    detail:
-      "All contracts sit behind a ProxyAdmin controlled by a 2 of 2 Base Governance Multisig made up of the Base Coordinator Multisig at 3 of 6 and the Base Security Council at 8 of 11, and ETHBEAT states there is no delay on upgrades.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "council-use",
+    "label": "Emergency powers used in incident response",
+    "level": "amber",
+    "detail": "ETHBEAT records the Security Council recovering about 30,766 ETH after the Apr 2026 Kelp rsETH bridge exploit and freezing about 74.6M ARB and 8,426 ETH tied to the Binance exploiter on Oct 30 2026. The interventions helped victims but show the reach of these powers.",
+    "sourceLabel": "ETHBEAT Arbitrum One project page",
+    "sourceUrl": "https://ethbeat.org/scaling/projects/arbitrum"
   },
   {
-    id: "exit",
-    label: "5 day withdrawals with no upgrade exit window",
-    level: "amber",
-    detail:
-      "Beryl cut single proof withdrawals from 7 days to 5 days and dual proof withdrawals can finalize in 1 day, but ETHBEAT lists no exit window before an unwanted upgrade and the Guardian multisig can pause withdrawals.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "upgrade-delay",
+    "label": "Regular upgrades wait about 17 days 8 hours",
+    "level": "green",
+    "detail": "Upgrades that do not come from the Security Council pass an 8 day L2 timelock, a 6 day 8 hour challenge period and a 3 day L1 timelock, about 17 days 8 hours in total. The exit window was extended to 7 days in Oct 2024.",
+    "sourceLabel": "ETHBEAT Arbitrum One project page",
+    "sourceUrl": "https://ethbeat.org/scaling/projects/arbitrum"
   },
   {
-    id: "sequencer",
-    label: "Single sequencer with slow forced inclusion",
-    level: "amber",
-    detail:
-      "Base runs a single sequencer whose address Base Multisig 1 can change, and users can force transactions through Ethereum if it fails with a delay of up to 12 hours.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "forced-inclusion",
+    "label": "Forced inclusion within 1 day",
+    "level": "amber",
+    "detail": "ETHBEAT lists a forced inclusion delay of up to 1 day, so users can get transactions included through Ethereum if the sequencer does not process them.",
+    "sourceLabel": "ETHBEAT Arbitrum One project page",
+    "sourceUrl": "https://ethbeat.org/scaling/projects/arbitrum"
   },
   {
-    id: "liveness",
-    label: "Repeated halts and proposal stalls",
-    level: "red",
-    detail:
-      "Base halted for 116 minutes on June 25 2026 and 20 minutes on June 26 2026 after a sequencer bug, following a 33 minute halt in August 2025. Proposal stalls in May and October 2026 are on the timeline with their own sources.",
-    sourceLabel: "Cointelegraph on the Base post mortem",
-    sourceUrl:
-      "https://cointelegraph.com/news/base-post-mortem-reveals-sequencer-bug-behind-back-to-back-outages",
+    "id": "withdrawals",
+    "label": "Seven day withdrawals with ZK proving in development",
+    "level": "amber",
+    "detail": "Withdrawals still wait for the seven day challenge window. On Aug 20 2026 Offchain Labs said BoLD can now accept ZK proofs, which could cut settlement from days to hours, but Arbitrum One needs a DAO approved upgrade before it applies.",
+    "sourceLabel": "Arbitrum blog, ZK settlement is coming",
+    "sourceUrl": "https://blog.arbitrum.io/zk-settlement-is-coming"
   },
   {
-    id: "governance",
-    label: "Own stack after leaving Superchain governance",
-    level: "amber",
-    detail:
-      "Base left the shared Optimism Superchain setup on March 4 2026 and now runs its own SuperchainConfig and guardian, with no token or onchain vote and a Security Council charter that has no removal procedure or quorum loss fallback.",
-    sourceLabel: "ETHBEAT Base project page",
-    sourceUrl: "https://ethbeat.org/scaling/projects/base",
+    "id": "dia",
+    "label": "ArbOS 51 Dia live since Jan 2026",
+    "level": "green",
+    "detail": "ArbOS 51 Dia activated on Arbitrum One and Nova on Jan 8 2026 after a Dec 18 2025 vote. It added Fusaka EVM changes, higher gas targets and a higher minimum L2 base fee.",
+    "sourceLabel": "Arbitrum docs, ArbOS 51 Dia",
+    "sourceUrl": "https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/arbos51"
   },
+  {
+    "id": "elara",
+    "label": "ArbOS 61 Elara live since Aug 2026",
+    "level": "green",
+    "detail": "ArbOS 61 Elara activated on Arbitrum One and Nova on Aug 20 2026 and raised the Stylus contract size limit to 96 KB. Optional compliance filtering is disabled on Arbitrum One and Nova.",
+    "sourceLabel": "Arbitrum docs, ArbOS 61 Elara",
+    "sourceUrl": "https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/arbos61"
+  },
+  {
+    "id": "stylus-pause",
+    "label": "New Stylus activations paused on One and Nova",
+    "level": "amber",
+    "detail": "On Oct 2 2026 the Security Council paused new Stylus activations on Arbitrum One and Nova over WebAssembly denial of service risks to liveness. Existing Stylus contracts keep running, no restart date is set, and a new BoLD guard on Arbitrum One could pause settlements if contradictory proofs were accepted.",
+    "sourceLabel": "Crypto Briefing",
+    "sourceUrl": "https://cryptobriefing.com/arbitrum-pauses-new-stylus-activations/"
+  },
+  {
+    "id": "uptime",
+    "label": "Sequencer uptime at 100 percent",
+    "level": "green",
+    "detail": "The Arbitrum status page shows 100 percent uptime for the Arbitrum One and Nova sequencer, feed, batch poster and validator over its 90 day window, with no incidents in the past 7 days.",
+    "sourceLabel": "Arbitrum status page",
+    "sourceUrl": "https://status.arbitrum.io/"
+  },
+  {
+    "id": "outage",
+    "label": "Last major outage in Dec 2023",
+    "level": "amber",
+    "detail": "On Dec 15 2023 a sustained surge of inscriptions stopped the sequencer from relaying transactions for about an hour and a half before all systems were reported operational again.",
+    "sourceLabel": "The Block",
+    "sourceUrl": "https://www.theblock.co/post/267950/arbitrum-says-all-systems-are-operational-after-surge-of-inscriptions-caused-outage-earlier-in-day"
+  },
+  {
+    "id": "security-program",
+    "label": "Arbitrum Security Program",
+    "level": "green",
+    "detail": "The Audit Program launched on Aug 1 2025 is being continued for 12 more months as the Arbitrum Security Program, adding AI assisted screening, the bug bounty and Security Council support. The Audit Program funded 18 completed audits that found 385 issues, all fixed before mainnet.",
+    "sourceLabel": "Arbitrum DAO forum",
+    "sourceUrl": "https://forum.arbitrum.foundation/t/arbitrum-security-program/31207"
+  }
 ];

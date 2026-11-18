@@ -15,5 +15,8 @@ export const config = {
     // Skip Next internals and static files, unless found in search params.
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     "/(api|trpc)(.*)",
+    // Clerk's frontend API proxy. On *.vercel.app hosts Clerk loads its scripts from /__clerk/, and the
+    // static-file rule above skips any path ending in .js, so without this entry those scripts 404.
+    "/__clerk/(.*)",
   ],
 };

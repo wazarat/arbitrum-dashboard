@@ -94,7 +94,13 @@ These return HTTP 402 or need a paid plan and are not used.
 
 ## Deployment
 
-The Vercel project `arbitrum-dashboard` deploys `main` to production on every push. `NEXT_PUBLIC_SIBLING_ATLAS_URLS` and the two Tally form links are set there. `NEXT_PUBLIC_SITE_URL` stays unset until the domain is pointed, so canonical URLs fall back to the Vercel production host.
+The Vercel project `arbitrum-dashboard` deploys `main` to production on every push. `NEXT_PUBLIC_SIBLING_ATLAS_URLS` and the two Tally form links are set there. `NEXT_PUBLIC_SITE_URL` stays unset until the domain is pointed, so canonical URLs fall back to the Vercel production host. The Clerk keys (`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, `CLERK_SECRET_KEY`) are set for production only, from the same Clerk application as canhav.com, so preview deploys run with the wall off.
+
+## Login wall
+
+With the Clerk keys present the wall is on. Overview, Methodology and the footer pages are public. Sectors, Traction, Funding, Explorer and the hidden pages show placeholder shapes under a "Log in for free access" pop-up, and Clerk opens in modal mode and returns the reader to the tab or action they clicked. Compare shows a comparison already in the URL, and Add to compare asks for a login. The project pop-up shows its header, Overview and Traction to everyone, and the rest after login. Gated data reaches the browser only from `/api/data/gated/` for a signed-in reader (401 otherwise, `Cache-Control: private`), and `scripts/check-public-bundle.mjs` fails the build if a gated investor name shows up in `.next/static` or the prerendered pages. Without keys the app builds and runs with the wall off and logs one warning. The rules sit in `src/lib/gate.ts`, and `npm run screenshots:auth` tests them (set `E2E_BASE_URL` to test a deployed site).
+
+Clerk production keys only answer on the Clerk application's own domain (canhav.com and its subdomains). Until `arbitrum.canhav.com` is pointed at the project, the wall shows on the `*.vercel.app` host but sign-in cannot complete there. One login covers every canhav.com atlas.
 
 ## Pointing arbitrum.canhav.com at the Vercel project
 

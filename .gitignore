@@ -56,3 +56,6 @@ next-env.d.ts
 /CLAUDE.md
 /.claude/
 /AGENTS.md
+
+# Tally exports, which can hold contact details (docs/REVIEW.md)
+data/submissions/

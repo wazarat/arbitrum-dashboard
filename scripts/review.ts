@@ -14,20 +14,49 @@ import { normalizeName } from "../src/lib/mapping";
 import { findFile, readCsv } from "./lib/csv";
 import { SUBMISSIONS } from "./lib/paths";
 
-/** Candidate Tally question labels for each ecosystem CSV column (case-insensitive, first match wins). */
+/**
+ * Tally question labels for each field, read from the live forms on Nov 18 2026: Submit a project
+ * (tally.so/r/rDOr1l) and Suggest a correction (tally.so/r/jeo9Yx, with hidden fields `project` and `page`).
+ * A column matches when its label equals a candidate or starts with one, ignoring case and curly quotes.
+ * Starts-with, not contains: the contact question mentions "X handle" and the evidence question "explorer".
+ */
 export const TALLY_FIELDS: Record<string, string[]> = {
   "Project/Company Name": ["project name", "project", "project/company name", "name"],
-  Website: ["website", "url", "site"],
-  "X Handle": ["x handle", "twitter", "x"],
-  "Sector/Category": ["sector", "sector/category", "category"],
-  "Native Chain": ["native chain", "chain"],
-  Description: ["short description", "description"],
-  Contracts: ["contract addresses", "contracts", "contract address"],
-  Evidence: ["evidence url", "evidence", "source url", "source"],
-  Contact: ["contact", "email", "contact (optional)"],
-  Field: ["which field is wrong", "field", "which field"],
-  "Correct value": ["correct value", "value", "correction"],
+  Website: ["website", "url"],
+  "X Handle": ["x handle", "twitter"],
+  "Sector/Category": ["sector", "category"],
+  "Native Chain": ["native chain"],
+  Description: ["what does the project do", "short description", "description"],
+  Contracts: ["contract addresses", "contract address", "contracts"],
+  Evidence: ["evidence link", "evidence url", "evidence", "source url"],
+  Contact: ["your contact", "contact", "email"],
+  Field: ["what's wrong", "which field is wrong", "which field"],
+  "Correct value": ["what should it say instead", "correct value", "correction"],
   Page: ["page"],
+  Submitted: ["submitted at"],
+};
+
+/** What each "What's wrong?" answer on the correction form covers in the ecosystem CSV. */
+export const CORRECTION_COLUMNS: Record<string, string[]> = {
+  Name: ["Project/Company Name"],
+  Website: ["Website"],
+  Sector: ["Sector/Category", "Subcategory"],
+  "Native chain": ["Native Chain", "Native Chain Detail"],
+  Description: ["Description"],
+  Status: ["Status"],
+  "X handle": ["X Handle"],
+  "Contract address": [],
+  "Funding or investors": ["Funding Type", "Investors / Backers", "Amount Raised", "Funding Source URL"],
+  Token: ["Token"],
+  "Security or incident info": ["Security Risk Level", "Audits", "Incidents", "Red Flags", "Security Source URL"],
+  "Traction or onchain data": ["Traction Tier", "Other Traction Signal", "Traction Source"],
+  "Project is defunct or rebranded": ["Status", "Project/Company Name"],
+  Other: [],
+};
+
+/** Where an answer is checked outside the ecosystem CSV. */
+const CORRECTION_ELSEWHERE: Record<string, string> = {
+  "Contract address": "data/contracts.csv",
 };
 
 export interface Submission {
@@ -36,22 +65,28 @@ export interface Submission {
   raw: RawRow;
 }
 
+const label = (x: string) => x.trim().toLowerCase().replace(/[\u2018\u2019]/g, "'");
+
 function findValue(row: RawRow, candidates: string[]): string {
   const keys = Object.keys(row);
-  for (const c of candidates) {
-    const k = keys.find((x) => x.trim().toLowerCase() === c);
-    if (k && (row[k] ?? "").trim()) return (row[k] ?? "").trim();
-  }
-  for (const c of candidates) {
-    const k = keys.find((x) => x.trim().toLowerCase().includes(c));
-    if (k && (row[k] ?? "").trim()) return (row[k] ?? "").trim();
+  for (const match of [(k: string, c: string) => label(k) === c, (k: string, c: string) => label(k).startsWith(c)]) {
+    for (const c of candidates) {
+      const k = keys.find((x) => match(x, c));
+      if (k && (row[k] ?? "").trim()) return (row[k] ?? "").trim();
+    }
   }
   return "";
+}
+
+/** Dropdown answers carry a note in brackets ("Arbitrum native (Arbitrum One, Nova or an Orbit chain)"); the CSV has the bare value. */
+export function csvValue(answer: string): string {
+  return answer.replace(/\s*\([^)]*\)\s*$/, "").trim();
 }
 
 export function parseSubmission(row: RawRow): Submission {
   const values: Record<string, string> = {};
   for (const [col, cands] of Object.entries(TALLY_FIELDS)) values[col] = findValue(row, cands);
+  values["Native Chain"] = csvValue(values["Native Chain"]);
   const kind = values.Field || values["Correct value"] ? "correction" : "new";
   return { kind, values, raw: row };
 }
@@ -66,9 +101,17 @@ export interface FieldDiff {
 /** Side-by-side of a submission against the current CSV row (null when the project is new). */
 export function diffSubmission(sub: Submission, current: RawRow | null): FieldDiff[] {
   if (sub.kind === "correction") {
-    const field = sub.values.Field;
-    const cur = current ? (current[field] ?? "") : null;
-    return [{ field: field || "(unspecified field)", submitted: sub.values["Correct value"], current: cur, changed: cur !== sub.values["Correct value"] }];
+    const answer = sub.values.Field;
+    const submitted = sub.values["Correct value"];
+    const columns = CORRECTION_COLUMNS[answer] ?? (current && answer in current ? [answer] : []);
+    if (!columns.length) {
+      const where = CORRECTION_ELSEWHERE[answer];
+      return [{ field: `${answer || "(unspecified field)"}${where ? ` (check ${where})` : ""}`, submitted, current: null, changed: true }];
+    }
+    return columns.map((c) => {
+      const cur = current ? (current[c] ?? "") : null;
+      return { field: c, submitted, current: cur, changed: cur !== submitted };
+    });
   }
   return ["Project/Company Name", "Website", "X Handle", "Sector/Category", "Native Chain", "Description"].map((f) => {
     const cur = current ? (current[f] ?? "") : null;
@@ -96,6 +139,8 @@ function main() {
       const current = byExact.get(name.toLowerCase()) ?? byNorm.get(normalizeName(name)) ?? null;
       n += 1;
       console.log(`\n#${n} ${sub.kind === "correction" ? "CORRECTION" : "NEW PROJECT"} · ${name || "(no project name)"}${current ? "" : sub.kind === "correction" ? "  !! no matching row" : "  (not in the CSV yet)"}${sub.values.Page ? `  · from ${sub.values.Page}` : ""}`);
+      if (sub.kind === "correction") console.log(`   what's wrong: ${sub.values.Field || "(not given)"}`);
+      if (sub.values.Submitted) console.log(`   received: ${sub.values.Submitted}`);
       if (sub.values.Evidence) console.log(`   evidence: ${sub.values.Evidence}`);
       if (sub.values.Contact) console.log(`   contact:  ${sub.values.Contact}`);
       for (const d of diffSubmission(sub, current)) {

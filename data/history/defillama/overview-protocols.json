@@ -427,6 +427,7 @@
 {"name":"Uniswap V2","defillamaId":"2197","module":"uniswap-v2","parentProtocol":"parent#uniswap","category":"Dexs","slug":"uniswap-v2"},
 {"name":"Uniswap V3","defillamaId":"2198","module":"uniswap-v3","parentProtocol":"parent#uniswap","category":"Dexs","slug":"uniswap-v3"},
 {"name":"Uniswap V4","defillamaId":"5690","module":"uniswap-v4","parentProtocol":"parent#uniswap","category":"Dexs","slug":"uniswap-v4"},
+{"name":"Unitus","defillamaId":"3938","module":"unitus","parentProtocol":"parent#dforce","category":"Lending","slug":"unitus"},
 {"name":"UniversalX","defillamaId":"7650","module":"universalx","parentProtocol":null,"category":"Trading App","slug":"universalx"},
 {"name":"Unlimited Network","defillamaId":"3055","module":"unlimited-network","parentProtocol":null,"category":"Derivatives","slug":"unlimited-network"},
 {"name":"Unlock Protocol","defillamaId":"6945","module":"unlock-protocol","parentProtocol":null,"category":"Payments","slug":"unlock-protocol"},

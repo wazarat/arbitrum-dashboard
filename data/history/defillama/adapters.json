@@ -110,6 +110,7 @@
 "bim-yield":{"doublecounted":true,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/bim/index.js","checked":"2026-11-17"},
 "binance-cex":{"doublecounted":false,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/binance/index.js","checked":"2026-11-17"},
 "bingx":{"doublecounted":null,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/.registries/cex/index.js","checked":"2026-11-17"},
+"biribi":{"doublecounted":null,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/registries/sumTokens.js","checked":"2026-11-21"},
 "biswap-v3":{"doublecounted":false,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/biswap-v3/index.js","checked":"2026-11-17"},
 "bitbond-lockers":{"doublecounted":false,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/BitbondLockers/index.js","checked":"2026-11-17"},
 "bitbond-sales":{"doublecounted":false,"source":"https://github.com/DefiLlama/DefiLlama-Adapters/blob/main/projects/BitbondSales/index.js","checked":"2026-11-17"},

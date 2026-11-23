@@ -1,4 +1,5 @@
 [
+{"date":"2026-11-19","name":"Fluidkey","classification":"Frontend & Infrastructure","technique":"Database Breach","amount":1600000,"returned":null,"targetType":"Wallet","source":null,"chains":6},
 {"date":"2026-11-08","name":"ACryptoS","classification":"Input Validation","technique":"Missing Input Validation","amount":665429,"returned":null,"targetType":"DeFi Protocol","source":null,"chains":5},
 {"date":"2026-11-02","name":"BitMart","classification":"Protocol Logic","technique":"Unknown","amount":391000,"returned":null,"targetType":"CEX","source":null,"chains":3},
 {"date":"2026-11-02","name":"Mercado Bitcoin","classification":"Protocol Logic","technique":"Unknown","amount":40000000,"returned":null,"targetType":"CEX","source":null,"chains":10},
